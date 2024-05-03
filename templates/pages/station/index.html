@@ -1,0 +1,72 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">List Station</h3>
+            <div class="card-tools">
+                <a type="button" class="btn btn-primary btn-sm" href="/station/create">
+                    <i class="fa fa-plus"></i> Add Station
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="ajax-table" class="table table-bordered table-striped data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px;">No</th>
+                        <th>Station</th>
+                        <th>Lat, Long</th>
+                        <th>Links</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for value in data %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ value['station'] }}</td>
+                            <td>{{ value['lat'] }}, {{ value['long'] }}</td>
+                            <td>
+                                {% for src in value['sources'] %}
+                                    - <b>{{ src['source'] }}</b> {% if(src['url']|length > 0) %} (<a href="{{ src['url'] }}" target="_blank">Open link</a>) {% endif %}<br>
+
+                                {% endfor %}
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" href="/station/{{ value['id'] }}/edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="btn btn-sm btn-danger" href="/station/{{ value['id'] }}/delete" onclick="return confirm('Are you sure.?')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block script %}
+
+<script>
+    /*$(document).ready(function() {
+        $('#ajax-table').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/station/get-data",
+                "type": "GET"
+            },
+            "columns": [
+                {"data": "no"},
+                {"data": "station"},
+                {"data": "roles"},
+                {"data": "buttons"}
+            ]
+        });
+    });*/
+</script>
+{% endblock %}

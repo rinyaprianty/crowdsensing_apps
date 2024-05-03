@@ -1,0 +1,755 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50734
+ Source Host           : localhost:3306
+ Source Schema         : aplikasi_rini_aqi
+
+ Target Server Type    : MySQL
+ Target Server Version : 50734
+ File Encoding         : 65001
+
+ Date: 14/03/2024 16:28:49
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for scraping_data
+-- ----------------------------
+DROP TABLE IF EXISTS `scraping_data`;
+CREATE TABLE `scraping_data`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `lat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `lng` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `sensor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `sensor_value` float NULL DEFAULT NULL,
+  `source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `date_data` datetime(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 602 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of scraping_data
+-- ----------------------------
+INSERT INTO `scraping_data` VALUES (1, 'FI-BOBOLI', '43.76421343', '11.24807368', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:01', '2024-03-14 11:12:01', NULL);
+INSERT INTO `scraping_data` VALUES (2, 'FI-SIGNA', '43.79323432', '11.09784928', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:01', '2024-03-14 11:12:01', NULL);
+INSERT INTO `scraping_data` VALUES (3, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'PM10', 26, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:03', '2024-03-14 11:12:03', NULL);
+INSERT INTO `scraping_data` VALUES (4, 'FI-BASSI', '43.78565057', '11.28663204', 'PM10', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:03', '2024-03-14 11:12:03', NULL);
+INSERT INTO `scraping_data` VALUES (5, 'FI-SCANDICCI', '43.75596846', '11.19189343', 'PM10', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:04', '2024-03-14 11:12:04', NULL);
+INSERT INTO `scraping_data` VALUES (6, 'FI-MOSSE', '43.7848074', '11.23045307', 'PM10', 29, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:04', '2024-03-14 11:12:04', NULL);
+INSERT INTO `scraping_data` VALUES (7, 'PT-MONTALE', '43.91514194', '11.00596674', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:05', '2024-03-14 11:12:05', NULL);
+INSERT INTO `scraping_data` VALUES (8, 'PT-SIGNORELLI', '43.93985801', '10.90430377', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:05', '2024-03-14 11:12:05', NULL);
+INSERT INTO `scraping_data` VALUES (9, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'PM10', 19, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:08', '2024-03-14 11:12:08', NULL);
+INSERT INTO `scraping_data` VALUES (10, 'PO-ROMA', '43.87339368', '11.0923088', 'PM10', 19, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:09', '2024-03-14 11:12:09', NULL);
+INSERT INTO `scraping_data` VALUES (11, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:10', '2024-03-14 11:12:10', NULL);
+INSERT INTO `scraping_data` VALUES (12, 'LI-PIOMBINO-PARCO-VIII-MARZO', '42.93192949', '10.52426026', 'PM10', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:11', '2024-03-14 11:12:11', NULL);
+INSERT INTO `scraping_data` VALUES (13, 'LI-COTONE', '42.9380578', '10.53332139', 'PM10', 9, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:12', '2024-03-14 11:12:12', NULL);
+INSERT INTO `scraping_data` VALUES (14, 'LI-LAPIRA', '43.5671449', '10.33132363', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:13', '2024-03-14 11:12:13', NULL);
+INSERT INTO `scraping_data` VALUES (15, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'PM10', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:15', '2024-03-14 11:12:15', NULL);
+INSERT INTO `scraping_data` VALUES (16, 'GR-URSS', '42.77768351', '11.11821164', 'PM10', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:16', '2024-03-14 11:12:16', NULL);
+INSERT INTO `scraping_data` VALUES (17, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:18', '2024-03-14 11:12:18', NULL);
+INSERT INTO `scraping_data` VALUES (18, 'GR-SONNINO', '42.76150048', '11.10902014', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:19', '2024-03-14 11:12:19', NULL);
+INSERT INTO `scraping_data` VALUES (19, 'MS-COLOMBAROTTO', '44.07747561', '10.09632071', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:19', '2024-03-14 11:12:19', NULL);
+INSERT INTO `scraping_data` VALUES (20, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'PM10', 24, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:20', '2024-03-14 11:12:20', NULL);
+INSERT INTO `scraping_data` VALUES (21, 'LU-MICHELETTO', '43.84279677', '10.51128178', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:20', '2024-03-14 11:12:20', NULL);
+INSERT INTO `scraping_data` VALUES (22, 'PI-PASSI', '43.73782873', '10.40069048', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:20', '2024-03-14 11:12:20', NULL);
+INSERT INTO `scraping_data` VALUES (23, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'PM10', 23, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:20', '2024-03-14 11:12:20', NULL);
+INSERT INTO `scraping_data` VALUES (24, 'LU-SAN-CONCORDIO', '43.83249909', '10.50086046', 'PM10', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:20', '2024-03-14 11:12:20', NULL);
+INSERT INTO `scraping_data` VALUES (25, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'PM10', 23, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:21', '2024-03-14 11:12:21', NULL);
+INSERT INTO `scraping_data` VALUES (26, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:21', '2024-03-14 11:12:21', NULL);
+INSERT INTO `scraping_data` VALUES (27, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:21', '2024-03-14 11:12:21', NULL);
+INSERT INTO `scraping_data` VALUES (28, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'PM10', 13, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:22', '2024-03-14 11:12:22', NULL);
+INSERT INTO `scraping_data` VALUES (29, 'FI-FIGLINE', '43.62302512', '11.46693498', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:22', '2024-03-14 11:12:22', NULL);
+INSERT INTO `scraping_data` VALUES (30, 'SI-BRACCI', '43.33845906', '11.32447156', 'PM10', 13, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:22', '2024-03-14 11:12:22', NULL);
+INSERT INTO `scraping_data` VALUES (31, 'PI-MONTECERBOLI', '43.24674333', '10.88081999', 'PM10', 7, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:22', '2024-03-14 11:12:22', NULL);
+INSERT INTO `scraping_data` VALUES (32, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'PM10', 3, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:23', '2024-03-14 11:12:23', NULL);
+INSERT INTO `scraping_data` VALUES (33, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:23', '2024-03-14 11:12:23', NULL);
+INSERT INTO `scraping_data` VALUES (34, 'LU-FORNOLI', '44.00557256', '10.55985178', 'PM10', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:24', '2024-03-14 11:12:24', NULL);
+INSERT INTO `scraping_data` VALUES (35, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'PM2_5', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:27', '2024-03-14 11:12:27', NULL);
+INSERT INTO `scraping_data` VALUES (36, 'FI-BASSI', '43.78565057', '11.28663204', 'PM2_5', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:28', '2024-03-14 11:12:28', NULL);
+INSERT INTO `scraping_data` VALUES (37, 'PT-MONTALE', '43.91514194', '11.00596674', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:28', '2024-03-14 11:12:28', NULL);
+INSERT INTO `scraping_data` VALUES (38, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:29', '2024-03-14 11:12:29', NULL);
+INSERT INTO `scraping_data` VALUES (39, 'PO-ROMA', '43.87339368', '11.0923088', 'PM2_5', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:30', '2024-03-14 11:12:30', NULL);
+INSERT INTO `scraping_data` VALUES (40, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'PM2_5', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:31', '2024-03-14 11:12:31', NULL);
+INSERT INTO `scraping_data` VALUES (41, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'PM2_5', 6, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:31', '2024-03-14 11:12:31', NULL);
+INSERT INTO `scraping_data` VALUES (42, 'GR-URSS', '42.77768351', '11.11821164', 'PM2_5', 5, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:31', '2024-03-14 11:12:31', NULL);
+INSERT INTO `scraping_data` VALUES (43, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'PM2_5', 9, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (44, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'PM2_5', 5, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (45, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'PM2_5', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (46, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'PM2_5', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (47, 'PI-PASSI', '43.73782873', '10.40069048', 'PM2_5', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (48, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:32', '2024-03-14 11:12:32', NULL);
+INSERT INTO `scraping_data` VALUES (49, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'PM2_5', 2, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:33', '2024-03-14 11:12:33', NULL);
+INSERT INTO `scraping_data` VALUES (50, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'PM2_5', 7, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:33', '2024-03-14 11:12:33', NULL);
+INSERT INTO `scraping_data` VALUES (51, 'FI-SIGNA', '43.79323432', '11.09784928', 'NO2', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:36', '2024-03-14 11:12:36', NULL);
+INSERT INTO `scraping_data` VALUES (52, 'FI-MOSSE', '43.7848074', '11.23045307', 'NO2', 64, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:36', '2024-03-14 11:12:36', NULL);
+INSERT INTO `scraping_data` VALUES (53, 'FI-SCANDICCI', '43.75596846', '11.19189343', 'NO2', 40, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:37', '2024-03-14 11:12:37', NULL);
+INSERT INTO `scraping_data` VALUES (54, 'FI-BASSI', '43.78565057', '11.28663204', 'NO2', 50, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:38', '2024-03-14 11:12:38', NULL);
+INSERT INTO `scraping_data` VALUES (55, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'NO2', 79, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:38', '2024-03-14 11:12:38', NULL);
+INSERT INTO `scraping_data` VALUES (56, 'PT-SIGNORELLI', '43.93985801', '10.90430377', 'NO2', 32, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:38', '2024-03-14 11:12:38', NULL);
+INSERT INTO `scraping_data` VALUES (57, 'PT-MONTALE', '43.91514194', '11.00596674', 'NO2', 32, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:38', '2024-03-14 11:12:38', NULL);
+INSERT INTO `scraping_data` VALUES (58, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'NO2', 55, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:38', '2024-03-14 11:12:38', NULL);
+INSERT INTO `scraping_data` VALUES (59, 'PO-ROMA', '43.87339368', '11.0923088', 'NO2', 67, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (60, 'GR-SONNINO', '42.76150048', '11.10902014', 'NO2', 65, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (61, 'LI-LAPIRA', '43.5671449', '10.33132363', 'NO2', 35, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (62, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (63, 'LI-PIOMBINO-PARCO-VIII-MARZO', '42.93192949', '10.52426026', 'NO2', 31, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (64, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'NO2', 33, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (65, 'MS-COLOMBAROTTO', '44.07747561', '10.09632071', 'NO2', 38, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:39', '2024-03-14 11:12:39', NULL);
+INSERT INTO `scraping_data` VALUES (66, 'LI-COTONE', '42.9380578', '10.53332139', 'NO2', 22, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:40', '2024-03-14 11:12:40', NULL);
+INSERT INTO `scraping_data` VALUES (67, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'NO2', 85, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:40', '2024-03-14 11:12:40', NULL);
+INSERT INTO `scraping_data` VALUES (68, 'GR-URSS', '42.77768351', '11.11821164', 'NO2', 34, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:40', '2024-03-14 11:12:40', NULL);
+INSERT INTO `scraping_data` VALUES (69, 'GR-MAREMMA', '42.66945274', '11.09331159', 'NO2', 4, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:40', '2024-03-14 11:12:40', NULL);
+INSERT INTO `scraping_data` VALUES (70, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'NO2', 63, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:40', '2024-03-14 11:12:40', NULL);
+INSERT INTO `scraping_data` VALUES (71, 'LU-MICHELETTO', '43.84279677', '10.51128178', 'NO2', 36, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (72, 'LU-CARIGNANO', '43.86798461', '10.45255594', 'NO2', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (73, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'NO2', 36, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (74, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'NO2', 33, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (75, 'LU-SAN-CONCORDIO', '43.83249909', '10.50086046', 'NO2', 24, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (76, 'PI-PASSI', '43.73782873', '10.40069048', 'NO2', 50, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (77, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'NO2', 68, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:41', '2024-03-14 11:12:41', NULL);
+INSERT INTO `scraping_data` VALUES (78, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'NO2', 74, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (79, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'NO2', 35, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (80, 'FI-FIGLINE', '43.62302512', '11.46693498', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (81, 'SI-BRACCI', '43.33845906', '11.32447156', 'NO2', 65, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (82, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (83, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'NO2', 3, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:42', '2024-03-14 11:12:42', NULL);
+INSERT INTO `scraping_data` VALUES (84, 'LU-FORNOLI', '44.00557256', '10.55985178', 'NO2', 21, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:43', '2024-03-14 11:12:43', NULL);
+INSERT INTO `scraping_data` VALUES (85, 'PI-MONTECERBOLI', '43.24674333', '10.88081999', 'NO2', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:43', '2024-03-14 11:12:43', NULL);
+INSERT INTO `scraping_data` VALUES (86, 'LU-CARIGNANO', '43.86798461', '10.45255594', 'O3', 105, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:45', '2024-03-14 11:12:45', NULL);
+INSERT INTO `scraping_data` VALUES (87, 'PI-PASSI', '43.73782873', '10.40069048', 'O3', 85, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:45', '2024-03-14 11:12:45', NULL);
+INSERT INTO `scraping_data` VALUES (88, 'GR-MAREMMA', '42.66945274', '11.09331159', 'O3', 91, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:45', '2024-03-14 11:12:45', NULL);
+INSERT INTO `scraping_data` VALUES (89, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'O3', 80, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:45', '2024-03-14 11:12:45', NULL);
+INSERT INTO `scraping_data` VALUES (90, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:48', '2024-03-14 11:12:48', NULL);
+INSERT INTO `scraping_data` VALUES (91, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:49', '2024-03-14 11:12:49', NULL);
+INSERT INTO `scraping_data` VALUES (92, 'LI-COTONE', '42.9380578', '10.53332139', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:50', '2024-03-14 11:12:50', NULL);
+INSERT INTO `scraping_data` VALUES (93, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:50', '2024-03-14 11:12:50', NULL);
+INSERT INTO `scraping_data` VALUES (94, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:50', '2024-03-14 11:12:50', NULL);
+INSERT INTO `scraping_data` VALUES (95, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:50', '2024-03-14 11:12:50', NULL);
+INSERT INTO `scraping_data` VALUES (96, 'SI-BRACCI', '43.33845906', '11.32447156', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:50', '2024-03-14 11:12:50', NULL);
+INSERT INTO `scraping_data` VALUES (97, 'FI-BASSI', '43.78565057', '11.28663204', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:52', '2024-03-14 11:12:52', NULL);
+INSERT INTO `scraping_data` VALUES (98, 'LI-LAPIRA', '43.5671449', '10.33132363', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:53', '2024-03-14 11:12:53', NULL);
+INSERT INTO `scraping_data` VALUES (99, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:12:53', '2024-03-14 11:12:53', NULL);
+INSERT INTO `scraping_data` VALUES (100, 'Truccazzano via Fornasino', '45.48455958', '9.47134686', 'Biossido di Azoto', 105, 'dati.lombardia.it', '2024-03-14 11:14:11', '2024-03-14 11:14:12', '2024-03-14 11:14:12', NULL);
+INSERT INTO `scraping_data` VALUES (101, 'Calusco d\'Adda v. Caduti sul Lavoro', '45.69043647', '9.48426111', 'Biossido di Azoto', 273, 'dati.lombardia.it', '2024-03-14 11:14:12', '2024-03-14 11:14:12', '2024-03-14 11:14:12', NULL);
+INSERT INTO `scraping_data` VALUES (102, 'Calusco d\'Adda v. Caduti sul Lavoro', '45.69043647', '9.48426111', 'PM10 (SM2005)', 273, 'dati.lombardia.it', '2024-03-14 11:14:12', '2024-03-14 11:14:13', '2024-03-14 11:14:13', NULL);
+INSERT INTO `scraping_data` VALUES (103, 'Ferno v.Di Dio', '45.61924753', '8.75697656', 'Biossido di Azoto', 215, 'dati.lombardia.it', '2024-03-14 11:14:13', '2024-03-14 11:14:14', '2024-03-14 11:14:14', NULL);
+INSERT INTO `scraping_data` VALUES (104, 'Ferno v.Di Dio', '45.61924753', '8.75697656', 'PM10 (SM2005)', 215, 'dati.lombardia.it', '2024-03-14 11:14:14', '2024-03-14 11:14:14', '2024-03-14 11:14:14', NULL);
+INSERT INTO `scraping_data` VALUES (105, 'Sannazzaro de\' Burgondi v.Traversi', '45.10277464', '8.90418742', 'PM10 (SM2005)', 85, 'dati.lombardia.it', '2024-03-14 11:14:15', '2024-03-14 11:14:15', '2024-03-14 11:14:15', NULL);
+INSERT INTO `scraping_data` VALUES (106, 'Salionze v. Campagna Rossa', '45.40331803', '10.72660167', 'Biossido di Azoto', 109, 'dati.lombardia.it', '2024-03-14 11:14:16', '2024-03-14 11:14:16', '2024-03-14 11:14:16', NULL);
+INSERT INTO `scraping_data` VALUES (107, 'Salionze v. Campagna Rossa', '45.40331803', '10.72660167', 'PM10 (SM2005)', 109, 'dati.lombardia.it', '2024-03-14 11:14:17', '2024-03-14 11:14:17', '2024-03-14 11:14:17', NULL);
+INSERT INTO `scraping_data` VALUES (108, 'Ponti sul Mincio v.San Martino', '45.41277633', '10.68336214', 'Biossido di Azoto', 113, 'dati.lombardia.it', '2024-03-14 11:14:18', '2024-03-14 11:14:19', '2024-03-14 11:14:19', NULL);
+INSERT INTO `scraping_data` VALUES (109, 'Ponti sul Mincio v.San Martino', '45.41277633', '10.68336214', 'PM10 (SM2005)', 113, 'dati.lombardia.it', '2024-03-14 11:14:19', '2024-03-14 11:14:20', '2024-03-14 11:14:20', NULL);
+INSERT INTO `scraping_data` VALUES (110, 'Monzambano campo sportivo', '45.38915861', '10.69058081', 'Biossido di Azoto', 88, 'dati.lombardia.it', '2024-03-14 11:14:21', '2024-03-14 11:14:22', '2024-03-14 11:14:22', NULL);
+INSERT INTO `scraping_data` VALUES (111, 'Borgofranco sul Po loc. Bonizzo', '45.04650286', '11.18094889', 'Biossido di Azoto', 14, 'dati.lombardia.it', '2024-03-14 11:14:22', '2024-03-14 11:14:23', '2024-03-14 11:14:23', NULL);
+INSERT INTO `scraping_data` VALUES (112, 'Borgofranco sul Po loc. Bonizzo', '45.04650286', '11.18094889', 'PM10 (SM2005)', 14, 'dati.lombardia.it', '2024-03-14 11:14:22', '2024-03-14 11:14:23', '2024-03-14 11:14:23', NULL);
+INSERT INTO `scraping_data` VALUES (113, 'Ceneselli v. Moro', '45.01345800', '11.37258100', 'Biossido di Azoto', 13, 'dati.lombardia.it', '2024-03-14 11:14:23', '2024-03-14 11:14:24', '2024-03-14 11:14:24', NULL);
+INSERT INTO `scraping_data` VALUES (114, 'Ceneselli v. Moro', '45.01345800', '11.37258100', 'PM10 (SM2005)', 13, 'dati.lombardia.it', '2024-03-14 11:14:24', '2024-03-14 11:14:24', '2024-03-14 11:14:24', NULL);
+INSERT INTO `scraping_data` VALUES (115, 'Magnacavallo campo sportivo', '45.00514363', '11.17840010', 'Biossido di Azoto', 11, 'dati.lombardia.it', '2024-03-14 11:14:24', '2024-03-14 11:14:24', '2024-03-14 11:14:24', NULL);
+INSERT INTO `scraping_data` VALUES (116, 'Melara v. dell\'Artigianato', '45.06321458', '11.20922257', 'Biossido di Azoto', 12, 'dati.lombardia.it', '2024-03-14 11:14:24', '2024-03-14 11:14:25', '2024-03-14 11:14:25', NULL);
+INSERT INTO `scraping_data` VALUES (117, 'Ostiglia v.Colombo', '45.07331225', '11.13703575', 'Biossido di Azoto', 14, 'dati.lombardia.it', '2024-03-14 11:14:25', '2024-03-14 11:14:25', '2024-03-14 11:14:25', NULL);
+INSERT INTO `scraping_data` VALUES (118, 'Ostiglia v.Colombo', '45.07331225', '11.13703575', 'PM10 (SM2005)', 14, 'dati.lombardia.it', '2024-03-14 11:14:25', '2024-03-14 11:14:25', '2024-03-14 11:14:25', NULL);
+INSERT INTO `scraping_data` VALUES (119, 'Pieve di Coriano v. Bugatte', '45.03394468', '11.11691932', 'Biossido di Azoto', 16, 'dati.lombardia.it', '2024-03-14 11:14:25', '2024-03-14 11:14:25', '2024-03-14 11:14:25', NULL);
+INSERT INTO `scraping_data` VALUES (120, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NO2 (Biossido di azoto)', 51, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:14:58', '2024-03-14 11:14:58', NULL);
+INSERT INTO `scraping_data` VALUES (121, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NOX (Ossidi di azoto)', 22, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:14:58', '2024-03-14 11:14:58', NULL);
+INSERT INTO `scraping_data` VALUES (122, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:14:58', '2024-03-14 11:14:58', NULL);
+INSERT INTO `scraping_data` VALUES (123, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'O3 (Ozono)', 16, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:14:58', '2024-03-14 11:14:58', NULL);
+INSERT INTO `scraping_data` VALUES (124, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NO2 (Biossido di azoto)', 29, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:01', '2024-03-14 11:15:01', NULL);
+INSERT INTO `scraping_data` VALUES (125, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NOX (Ossidi di azoto)', 34, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:01', '2024-03-14 11:15:01', NULL);
+INSERT INTO `scraping_data` VALUES (126, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NO (Monossido di azoto)', 4, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:01', '2024-03-14 11:15:01', NULL);
+INSERT INTO `scraping_data` VALUES (127, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'O3 (Ozono)', 88, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:01', '2024-03-14 11:15:01', NULL);
+INSERT INTO `scraping_data` VALUES (128, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NO2 (Biossido di azoto)', 20, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:02', '2024-03-14 11:15:02', NULL);
+INSERT INTO `scraping_data` VALUES (129, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'NO2 (Biossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (130, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (131, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NOX (Ossidi di azoto)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (132, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (133, 'GIARDINI MARGHERITA', '44.482671138769525', '11.35406170088398', 'O3 (Ozono)', 72, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (134, 'GIARDINI MARGHERITA', '44.482671138769525', '11.35406170088398', 'NO2 (Biossido di azoto)', 6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (135, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NO2 (Biossido di azoto)', 21, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (136, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NOX (Ossidi di azoto)', 24, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:03', '2024-03-14 11:15:03', NULL);
+INSERT INTO `scraping_data` VALUES (137, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'NOX (Ossidi di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (138, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'CO (Monossido di carbonio)', 0.6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (139, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H4(CH3)2 (o-xylene)', 0.5, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (140, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H5-CH3 (Toluene)', 1.5, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (141, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (142, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'O3 (Ozono)', 37, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:04', '2024-03-14 11:15:04', NULL);
+INSERT INTO `scraping_data` VALUES (143, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:05', '2024-03-14 11:15:05', NULL);
+INSERT INTO `scraping_data` VALUES (144, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NOX (Ossidi di azoto)', 11, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:05', '2024-03-14 11:15:05', NULL);
+INSERT INTO `scraping_data` VALUES (145, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:05', '2024-03-14 11:15:05', NULL);
+INSERT INTO `scraping_data` VALUES (146, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'O3 (Ozono)', 88, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:05', '2024-03-14 11:15:05', NULL);
+INSERT INTO `scraping_data` VALUES (147, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NO2 (Biossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:05', '2024-03-14 11:15:05', NULL);
+INSERT INTO `scraping_data` VALUES (148, 'ROMA', '44.215013441115374', '12.056546690819824', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:06', '2024-03-14 11:15:06', NULL);
+INSERT INTO `scraping_data` VALUES (149, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NOX (Ossidi di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:07', '2024-03-14 11:15:07', NULL);
+INSERT INTO `scraping_data` VALUES (150, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'O3 (Ozono)', 29, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:08', '2024-03-14 11:15:08', NULL);
+INSERT INTO `scraping_data` VALUES (151, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:08', '2024-03-14 11:15:08', NULL);
+INSERT INTO `scraping_data` VALUES (152, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NOX (Ossidi di azoto)', 27, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (153, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (154, 'ROMA', '44.215013441115374', '12.056546690819824', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (155, 'ROMA', '44.215013441115374', '12.056546690819824', 'NOX (Ossidi di azoto)', 16, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (156, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H6 (Benzene)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (157, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (158, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NOX (Ossidi di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (159, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'C6H6 (Benzene)', 0.7, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (160, 'SAN LAZZARO', '44.466232977185605', '11.415629343017232', 'NO2 (Biossido di azoto)', 13, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (161, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NO (Monossido di azoto)', 12, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (162, 'CAORLE', '44.418310327032806', '12.224430371864216', 'SO2 (Biossido di zolfo)', 0, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (163, 'CAORLE', '44.418310327032806', '12.224430371864216', 'O3 (Ozono)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:09', '2024-03-14 11:15:09', NULL);
+INSERT INTO `scraping_data` VALUES (164, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NO2 (Biossido di azoto)', 32, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (165, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NOX (Ossidi di azoto)', 37, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (166, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (167, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'O3 (Ozono)', 10, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (168, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'C6H5-CH3 (Toluene)', 3.6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (169, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (170, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (171, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'O3 (Ozono)', 14, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (172, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (173, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NOX (Ossidi di azoto)', 28, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (174, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (175, 'PARCO BERTOZZI', '44.284601', '11.872664', 'O3 (Ozono)', 46, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:10', '2024-03-14 11:15:10', NULL);
+INSERT INTO `scraping_data` VALUES (176, 'PARCO BERTOZZI', '44.284601', '11.872664', 'NO2 (Biossido di azoto)', 14, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (177, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NOX (Ossidi di azoto)', 18, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (178, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (179, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'C6H6 (Benzene)', 1.6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (180, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NOX (Ossidi di azoto)', 67, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (181, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'O3 (Ozono)', 21, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (182, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (183, 'VIA CHIARINI', '44.49913433517029', '11.285089594971216', 'O3 (Ozono)', 49, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (184, 'VIA CHIARINI', '44.49913433517029', '11.285089594971216', 'NO2 (Biossido di azoto)', 16, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:11', '2024-03-14 11:15:11', NULL);
+INSERT INTO `scraping_data` VALUES (185, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'O3 (Ozono)', 55, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (186, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'NO2 (Biossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (187, 'ISONZO', '44.84154333177718', '11.6121729864207', 'NO2 (Biossido di azoto)', 23, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (188, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'CO (Monossido di carbonio)', 0.6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (189, 'ISONZO', '44.84154333177718', '11.6121729864207', 'C6H6 (Benzene)', 0.8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (190, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'NO2 (Biossido di azoto)', 8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (191, 'CENTO', '44.73206179430421', '11.298683230587722', 'O3 (Ozono)', 12, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (192, 'CENTO', '44.73206179430421', '11.298683230587722', 'NO2 (Biossido di azoto)', 47, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (193, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'NO2 (Biossido di azoto)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (194, 'OSTELLATO', '44.73995385648027', '11.94097876124348', 'O3 (Ozono)', 28, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (195, 'OSTELLATO', '44.73995385648027', '11.94097876124348', 'NO2 (Biossido di azoto)', 12, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:12', '2024-03-14 11:15:12', NULL);
+INSERT INTO `scraping_data` VALUES (196, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NO2 (Biossido di azoto)', 49, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:13', '2024-03-14 11:15:13', NULL);
+INSERT INTO `scraping_data` VALUES (197, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'O3 (Ozono)', 23, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:13', '2024-03-14 11:15:13', NULL);
+INSERT INTO `scraping_data` VALUES (198, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NO2 (Biossido di azoto)', 12, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:13', '2024-03-14 11:15:13', NULL);
+INSERT INTO `scraping_data` VALUES (199, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'O3 (Ozono)', 20, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:13', '2024-03-14 11:15:13', NULL);
+INSERT INTO `scraping_data` VALUES (200, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'C6H6 (Benzene)', 0.8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:13', '2024-03-14 11:15:13', NULL);
+INSERT INTO `scraping_data` VALUES (201, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (202, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'O3 (Ozono)', 43, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (203, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'NO2 (Biossido di azoto)', 21, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (204, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NO2 (Biossido di azoto)', 29, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (205, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NOX (Ossidi di azoto)', 34, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (206, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'C6H6 (Benzene)', 0.8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (207, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:14', '2024-03-14 11:15:14', NULL);
+INSERT INTO `scraping_data` VALUES (208, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NOX (Ossidi di azoto)', 4, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:15', '2024-03-14 11:15:15', NULL);
+INSERT INTO `scraping_data` VALUES (209, 'BADIA', '44.65726946670704', '10.288366311688732', 'O3 (Ozono)', 68, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:15', '2024-03-14 11:15:15', NULL);
+INSERT INTO `scraping_data` VALUES (210, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'O3 (Ozono)', 44, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:15', '2024-03-14 11:15:15', NULL);
+INSERT INTO `scraping_data` VALUES (211, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NO2 (Biossido di azoto)', 16, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:15', '2024-03-14 11:15:15', NULL);
+INSERT INTO `scraping_data` VALUES (212, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NOX (Ossidi di azoto)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:15', '2024-03-14 11:15:15', NULL);
+INSERT INTO `scraping_data` VALUES (213, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (214, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'O3 (Ozono)', 51, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (215, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (216, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NOX (Ossidi di azoto)', 13, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (217, 'BADIA', '44.65726946670704', '10.288366311688732', 'NO2 (Biossido di azoto)', 7, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (218, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (219, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NO2 (Biossido di azoto)', 4, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (220, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:16', '2024-03-14 11:15:16', NULL);
+INSERT INTO `scraping_data` VALUES (221, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'O3 (Ozono)', 33, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:17', '2024-03-14 11:15:17', NULL);
+INSERT INTO `scraping_data` VALUES (222, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NOX (Ossidi di azoto)', 78, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:17', '2024-03-14 11:15:17', NULL);
+INSERT INTO `scraping_data` VALUES (223, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H6 (Benzene)', 2.9, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:17', '2024-03-14 11:15:17', NULL);
+INSERT INTO `scraping_data` VALUES (224, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H5-CH3 (Toluene)', 10.6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:17', '2024-03-14 11:15:17', NULL);
+INSERT INTO `scraping_data` VALUES (225, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NO (Monossido di azoto)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:17', '2024-03-14 11:15:17', NULL);
+INSERT INTO `scraping_data` VALUES (226, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H4(CH3)2 (o-xylene)', 2.4, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (227, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'O3 (Ozono)', 5, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (228, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'O3 (Ozono)', 60, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (229, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NO2 (Biossido di azoto)', 43, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (230, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (231, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'O3 (Ozono)', 48, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (232, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NO2 (Biossido di azoto)', 6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:18', '2024-03-14 11:15:18', NULL);
+INSERT INTO `scraping_data` VALUES (233, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NOX (Ossidi di azoto)', 8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:19', '2024-03-14 11:15:19', NULL);
+INSERT INTO `scraping_data` VALUES (234, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'O3 (Ozono)', 58, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:19', '2024-03-14 11:15:19', NULL);
+INSERT INTO `scraping_data` VALUES (235, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NO2 (Biossido di azoto)', 12, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:19', '2024-03-14 11:15:19', NULL);
+INSERT INTO `scraping_data` VALUES (236, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NOX (Ossidi di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:19', '2024-03-14 11:15:19', NULL);
+INSERT INTO `scraping_data` VALUES (237, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NOX (Ossidi di azoto)', 48, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (238, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'O3 (Ozono)', 40, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (239, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (240, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NOX (Ossidi di azoto)', 15, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (241, 'REMESINA', '44.79942646080965', '10.88326841859053', 'NO (Monossido di azoto)', 28, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (242, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'O3 (Ozono)', 7, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:20', '2024-03-14 11:15:20', NULL);
+INSERT INTO `scraping_data` VALUES (243, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'NO2 (Biossido di azoto)', 54, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:21', '2024-03-14 11:15:21', NULL);
+INSERT INTO `scraping_data` VALUES (244, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'NO (Monossido di azoto)', 13, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:21', '2024-03-14 11:15:21', NULL);
+INSERT INTO `scraping_data` VALUES (245, 'SAN FRANCESCO', '44.54119146442797', '10.8188926493122', 'NO2 (Biossido di azoto)', 19, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:21', '2024-03-14 11:15:21', NULL);
+INSERT INTO `scraping_data` VALUES (246, 'SAN FRANCESCO', '44.54119146442797', '10.8188926493122', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:21', '2024-03-14 11:15:21', NULL);
+INSERT INTO `scraping_data` VALUES (247, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'O3 (Ozono)', 30, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:22', '2024-03-14 11:15:22', NULL);
+INSERT INTO `scraping_data` VALUES (248, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'NO2 (Biossido di azoto)', 19, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:23', '2024-03-14 11:15:23', NULL);
+INSERT INTO `scraping_data` VALUES (249, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'O3 (Ozono)', 52, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:23', '2024-03-14 11:15:23', NULL);
+INSERT INTO `scraping_data` VALUES (250, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:24', '2024-03-14 11:15:24', NULL);
+INSERT INTO `scraping_data` VALUES (251, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'O3 (Ozono)', 66, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:25', '2024-03-14 11:15:25', NULL);
+INSERT INTO `scraping_data` VALUES (252, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NO2 (Biossido di azoto)', 10, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:25', '2024-03-14 11:15:25', NULL);
+INSERT INTO `scraping_data` VALUES (253, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NOX (Ossidi di azoto)', 11, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (254, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (255, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'NO2 (Biossido di azoto)', 31, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (256, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NO2 (Biossido di azoto)', 16, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (257, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'CO (Monossido di carbonio)', 0.3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (258, 'REMESINA', '44.79942646080965', '10.88326841859053', 'NO2 (Biossido di azoto)', 64, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (259, 'REMESINA', '44.79942646080965', '10.88326841859053', 'O3 (Ozono)', 4, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (260, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'NO2 (Biossido di azoto)', 19, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (261, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'C6H6 (Benzene)', 1.1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:26', '2024-03-14 11:15:26', NULL);
+INSERT INTO `scraping_data` VALUES (262, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NO2 (Biossido di azoto)', 2.9, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:27', '2024-03-14 11:15:27', NULL);
+INSERT INTO `scraping_data` VALUES (263, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:27', '2024-03-14 11:15:27', NULL);
+INSERT INTO `scraping_data` VALUES (264, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'NO (Monossido di azoto)', 8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:27', '2024-03-14 11:15:27', NULL);
+INSERT INTO `scraping_data` VALUES (265, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NOX (Ossidi di azoto)', 4.2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:27', '2024-03-14 11:15:27', NULL);
+INSERT INTO `scraping_data` VALUES (266, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NO (Monossido di azoto)', 0.8, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:27', '2024-03-14 11:15:27', NULL);
+INSERT INTO `scraping_data` VALUES (267, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'O3 (Ozono)', 17, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (268, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NOX (Ossidi di azoto)', 32, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (269, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (270, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NO2 (Biossido di azoto)', 66, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (271, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NO2 (Biossido di azoto)', 31, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (272, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'CO (Monossido di carbonio)', 1.1, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (273, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H6 (Benzene)', 3.2, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:28', '2024-03-14 11:15:28', NULL);
+INSERT INTO `scraping_data` VALUES (274, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H5-CH3 (Toluene)', 6, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:29', '2024-03-14 11:15:29', NULL);
+INSERT INTO `scraping_data` VALUES (275, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'NO2 (Biossido di azoto)', 50, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:29', '2024-03-14 11:15:29', NULL);
+INSERT INTO `scraping_data` VALUES (276, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H4(CH3)2 (o-xylene)', 1.3, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:29', '2024-03-14 11:15:29', NULL);
+INSERT INTO `scraping_data` VALUES (277, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NOX (Ossidi di azoto)', 103, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:29', '2024-03-14 11:15:29', NULL);
+INSERT INTO `scraping_data` VALUES (278, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NO (Monossido di azoto)', 24, 'dati.arpae.it', '2024-03-12 23:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (279, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'O3 (Ozono)', 21, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (280, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'O3 (Ozono)', 87, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (281, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'PM10', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (282, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'PM2.5', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (283, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NOX (Ossidi di azoto)', 27, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:30', '2024-03-14 11:15:30', NULL);
+INSERT INTO `scraping_data` VALUES (284, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NO2 (Biossido di azoto)', 23, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:31', '2024-03-14 11:15:31', NULL);
+INSERT INTO `scraping_data` VALUES (285, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:31', '2024-03-14 11:15:31', NULL);
+INSERT INTO `scraping_data` VALUES (286, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'PM10', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:31', '2024-03-14 11:15:31', NULL);
+INSERT INTO `scraping_data` VALUES (287, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'NO2 (Biossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:31', '2024-03-14 11:15:31', NULL);
+INSERT INTO `scraping_data` VALUES (288, 'SAVIGNANO', '44.09590808309935', '12.402375318803845', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:32', '2024-03-14 11:15:32', NULL);
+INSERT INTO `scraping_data` VALUES (289, 'SAVIGNANO DI RIGO', '43.92644331643528', '12.22384477871764', 'NOX (Ossidi di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:32', '2024-03-14 11:15:32', NULL);
+INSERT INTO `scraping_data` VALUES (290, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'PM10', 12, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:32', '2024-03-14 11:15:32', NULL);
+INSERT INTO `scraping_data` VALUES (291, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:33', '2024-03-14 11:15:33', NULL);
+INSERT INTO `scraping_data` VALUES (292, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NOX (Ossidi di azoto)', 13, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:33', '2024-03-14 11:15:33', NULL);
+INSERT INTO `scraping_data` VALUES (293, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:33', '2024-03-14 11:15:33', NULL);
+INSERT INTO `scraping_data` VALUES (294, 'GIARDINI MARGHERITA', '44.482671138769525', '11.35406170088398', 'O3 (Ozono)', 71, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:33', '2024-03-14 11:15:33', NULL);
+INSERT INTO `scraping_data` VALUES (295, 'GIARDINI MARGHERITA', '44.482671138769525', '11.35406170088398', 'NO2 (Biossido di azoto)', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:34', '2024-03-14 11:15:34', NULL);
+INSERT INTO `scraping_data` VALUES (296, 'GIARDINI MARGHERITA', '44.482671138769525', '11.35406170088398', 'PM2.5', 4, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:34', '2024-03-14 11:15:34', NULL);
+INSERT INTO `scraping_data` VALUES (297, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NO2 (Biossido di azoto)', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:34', '2024-03-14 11:15:34', NULL);
+INSERT INTO `scraping_data` VALUES (298, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NOX (Ossidi di azoto)', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:35', '2024-03-14 11:15:35', NULL);
+INSERT INTO `scraping_data` VALUES (299, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'CO (Monossido di carbonio)', 0.6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:35', '2024-03-14 11:15:35', NULL);
+INSERT INTO `scraping_data` VALUES (300, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NOX (Ossidi di azoto)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:35', '2024-03-14 11:15:35', NULL);
+INSERT INTO `scraping_data` VALUES (301, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'C6H6 (Benzene)', 0.6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:35', '2024-03-14 11:15:35', NULL);
+INSERT INTO `scraping_data` VALUES (302, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:36', '2024-03-14 11:15:36', NULL);
+INSERT INTO `scraping_data` VALUES (303, 'DE AMICIS', '44.35446681194461', '11.719711038978772', 'PM10', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:36', '2024-03-14 11:15:36', NULL);
+INSERT INTO `scraping_data` VALUES (304, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'NO2 (Biossido di azoto)', 23, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:36', '2024-03-14 11:15:36', NULL);
+INSERT INTO `scraping_data` VALUES (305, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'O3 (Ozono)', 87, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:37', '2024-03-14 11:15:37', NULL);
+INSERT INTO `scraping_data` VALUES (306, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H4(CH3)2 (o-xylene)', 0.6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:37', '2024-03-14 11:15:37', NULL);
+INSERT INTO `scraping_data` VALUES (307, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'PM2.5', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:37', '2024-03-14 11:15:37', NULL);
+INSERT INTO `scraping_data` VALUES (308, 'PORTA SAN FELICE', '44.49905998333452', '11.327526717440112', 'PM2.5', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:37', '2024-03-14 11:15:37', NULL);
+INSERT INTO `scraping_data` VALUES (309, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'PM10', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:38', '2024-03-14 11:15:38', NULL);
+INSERT INTO `scraping_data` VALUES (310, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'O3 (Ozono)', 41, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:38', '2024-03-14 11:15:38', NULL);
+INSERT INTO `scraping_data` VALUES (311, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NO2 (Biossido di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:38', '2024-03-14 11:15:38', NULL);
+INSERT INTO `scraping_data` VALUES (312, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NOX (Ossidi di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:38', '2024-03-14 11:15:38', NULL);
+INSERT INTO `scraping_data` VALUES (313, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:39', '2024-03-14 11:15:39', NULL);
+INSERT INTO `scraping_data` VALUES (314, 'PARCO MONTECUCCO', '45.03759868358424', '9.66833225209482', 'PM2.5', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:39', '2024-03-14 11:15:39', NULL);
+INSERT INTO `scraping_data` VALUES (315, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'PM10', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:39', '2024-03-14 11:15:39', NULL);
+INSERT INTO `scraping_data` VALUES (316, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NO2 (Biossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:40', '2024-03-14 11:15:40', NULL);
+INSERT INTO `scraping_data` VALUES (317, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NOX (Ossidi di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:40', '2024-03-14 11:15:40', NULL);
+INSERT INTO `scraping_data` VALUES (318, 'FRANCHINI-ANGELONI', '44.140425107966486', '12.243790828606755', 'PM10', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:41', '2024-03-14 11:15:41', NULL);
+INSERT INTO `scraping_data` VALUES (319, 'CORTE BRUGNATELLA', '44.733762462103954', '9.36590923057421', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:41', '2024-03-14 11:15:41', NULL);
+INSERT INTO `scraping_data` VALUES (320, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'O3 (Ozono)', 39, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:41', '2024-03-14 11:15:41', NULL);
+INSERT INTO `scraping_data` VALUES (321, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:41', '2024-03-14 11:15:41', NULL);
+INSERT INTO `scraping_data` VALUES (322, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NOX (Ossidi di azoto)', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:41', '2024-03-14 11:15:41', NULL);
+INSERT INTO `scraping_data` VALUES (323, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:42', '2024-03-14 11:15:42', NULL);
+INSERT INTO `scraping_data` VALUES (324, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'PM2.5', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:42', '2024-03-14 11:15:42', NULL);
+INSERT INTO `scraping_data` VALUES (325, 'ROMA', '44.215013441115374', '12.056546690819824', 'PM10', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:42', '2024-03-14 11:15:42', NULL);
+INSERT INTO `scraping_data` VALUES (326, 'ROMA', '44.215013441115374', '12.056546690819824', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:43', '2024-03-14 11:15:43', NULL);
+INSERT INTO `scraping_data` VALUES (327, 'ROMA', '44.215013441115374', '12.056546690819824', 'NOX (Ossidi di azoto)', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:43', '2024-03-14 11:15:43', NULL);
+INSERT INTO `scraping_data` VALUES (328, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H6 (Benzene)', 0.9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:43', '2024-03-14 11:15:43', NULL);
+INSERT INTO `scraping_data` VALUES (329, 'ROMA', '44.215013441115374', '12.056546690819824', 'C6H5-CH3 (Toluene)', 1.9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:44', '2024-03-14 11:15:44', NULL);
+INSERT INTO `scraping_data` VALUES (330, 'ROMA', '44.215013441115374', '12.056546690819824', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:44', '2024-03-14 11:15:44', NULL);
+INSERT INTO `scraping_data` VALUES (331, 'PARCO RESISTENZA', '44.214192060885615', '12.047203857220106', 'PM10', 12, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:44', '2024-03-14 11:15:44', NULL);
+INSERT INTO `scraping_data` VALUES (332, 'SAN LAZZARO', '44.466232977185605', '11.415629343017232', 'PM10', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:45', '2024-03-14 11:15:45', NULL);
+INSERT INTO `scraping_data` VALUES (333, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:45', '2024-03-14 11:15:45', NULL);
+INSERT INTO `scraping_data` VALUES (334, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'PM10', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:45', '2024-03-14 11:15:45', NULL);
+INSERT INTO `scraping_data` VALUES (335, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NOX (Ossidi di azoto)', 50, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:46', '2024-03-14 11:15:46', NULL);
+INSERT INTO `scraping_data` VALUES (336, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'CO (Monossido di carbonio)', 0.5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:46', '2024-03-14 11:15:46', NULL);
+INSERT INTO `scraping_data` VALUES (337, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'C6H6 (Benzene)', 2.1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:46', '2024-03-14 11:15:46', NULL);
+INSERT INTO `scraping_data` VALUES (338, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'C6H5-CH3 (Toluene)', 9.7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:46', '2024-03-14 11:15:46', NULL);
+INSERT INTO `scraping_data` VALUES (339, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NO (Monossido di azoto)', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:46', '2024-03-14 11:15:46', NULL);
+INSERT INTO `scraping_data` VALUES (340, 'CAORLE', '44.418310327032806', '12.224430371864216', 'SO2 (Biossido di zolfo)', 0, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:47', '2024-03-14 11:15:47', NULL);
+INSERT INTO `scraping_data` VALUES (341, 'CAORLE', '44.418310327032806', '12.224430371864216', 'PM10', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:47', '2024-03-14 11:15:47', NULL);
+INSERT INTO `scraping_data` VALUES (342, 'CAORLE', '44.418310327032806', '12.224430371864216', 'O3 (Ozono)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:48', '2024-03-14 11:15:48', NULL);
+INSERT INTO `scraping_data` VALUES (343, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NOX (Ossidi di azoto)', 27, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:48', '2024-03-14 11:15:48', NULL);
+INSERT INTO `scraping_data` VALUES (344, 'CAORLE', '44.418310327032806', '12.224430371864216', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:48', '2024-03-14 11:15:48', NULL);
+INSERT INTO `scraping_data` VALUES (345, 'CAORLE', '44.418310327032806', '12.224430371864216', 'PM2.5', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:48', '2024-03-14 11:15:48', NULL);
+INSERT INTO `scraping_data` VALUES (346, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'NO2 (Biossido di azoto)', 38, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:49', '2024-03-14 11:15:49', NULL);
+INSERT INTO `scraping_data` VALUES (347, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'O3 (Ozono)', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:49', '2024-03-14 11:15:49', NULL);
+INSERT INTO `scraping_data` VALUES (348, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NOX (Ossidi di azoto)', 23, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:49', '2024-03-14 11:15:49', NULL);
+INSERT INTO `scraping_data` VALUES (349, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:49', '2024-03-14 11:15:49', NULL);
+INSERT INTO `scraping_data` VALUES (350, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'PM2.5', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:50', '2024-03-14 11:15:50', NULL);
+INSERT INTO `scraping_data` VALUES (351, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'PM10', 13, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:50', '2024-03-14 11:15:50', NULL);
+INSERT INTO `scraping_data` VALUES (352, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'O3 (Ozono)', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:50', '2024-03-14 11:15:50', NULL);
+INSERT INTO `scraping_data` VALUES (353, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:51', '2024-03-14 11:15:51', NULL);
+INSERT INTO `scraping_data` VALUES (354, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NOX (Ossidi di azoto)', 28, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:51', '2024-03-14 11:15:51', NULL);
+INSERT INTO `scraping_data` VALUES (355, 'DELTA CERVIA', '44.28290271737213', '12.331294446351963', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:51', '2024-03-14 11:15:51', NULL);
+INSERT INTO `scraping_data` VALUES (356, 'PARCO BERTOZZI', '44.284601', '11.872664', 'PM10', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:52', '2024-03-14 11:15:52', NULL);
+INSERT INTO `scraping_data` VALUES (357, 'PARCO BERTOZZI', '44.284601', '11.872664', 'O3 (Ozono)', 49, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:52', '2024-03-14 11:15:52', NULL);
+INSERT INTO `scraping_data` VALUES (358, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:52', '2024-03-14 11:15:52', NULL);
+INSERT INTO `scraping_data` VALUES (359, 'BALLIRANA', '44.526486831598426', '11.981396163112384', 'NO2 (Biossido di azoto)', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:52', '2024-03-14 11:15:52', NULL);
+INSERT INTO `scraping_data` VALUES (360, 'ZALAMELLA', '44.42682989035764', '12.185540505062631', 'PM10', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:53', '2024-03-14 11:15:53', NULL);
+INSERT INTO `scraping_data` VALUES (361, 'OSTELLATO', '44.73995385648027', '11.94097876124348', 'PM2.5', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:53', '2024-03-14 11:15:53', NULL);
+INSERT INTO `scraping_data` VALUES (362, 'OSTELLATO', '44.73995385648027', '11.94097876124348', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:54', '2024-03-14 11:15:54', NULL);
+INSERT INTO `scraping_data` VALUES (363, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'O3 (Ozono)', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:54', '2024-03-14 11:15:54', NULL);
+INSERT INTO `scraping_data` VALUES (364, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'NO2 (Biossido di azoto)', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:54', '2024-03-14 11:15:54', NULL);
+INSERT INTO `scraping_data` VALUES (365, 'SAN PIETRO CAPOFIUME', '44.65328018947086', '11.623854093048257', 'PM2.5', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:55', '2024-03-14 11:15:55', NULL);
+INSERT INTO `scraping_data` VALUES (366, 'VIA CHIARINI', '44.49913433517029', '11.285089594971216', 'PM10', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:55', '2024-03-14 11:15:55', NULL);
+INSERT INTO `scraping_data` VALUES (367, 'VIA CHIARINI', '44.49913433517029', '11.285089594971216', 'O3 (Ozono)', 51, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:55', '2024-03-14 11:15:55', NULL);
+INSERT INTO `scraping_data` VALUES (368, 'VIA CHIARINI', '44.49913433517029', '11.285089594971216', 'NO2 (Biossido di azoto)', 12, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:55', '2024-03-14 11:15:55', NULL);
+INSERT INTO `scraping_data` VALUES (369, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'PM10', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:56', '2024-03-14 11:15:56', NULL);
+INSERT INTO `scraping_data` VALUES (370, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'O3 (Ozono)', 57, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:56', '2024-03-14 11:15:56', NULL);
+INSERT INTO `scraping_data` VALUES (371, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'NO2 (Biossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:56', '2024-03-14 11:15:56', NULL);
+INSERT INTO `scraping_data` VALUES (372, 'CASTELLUCCIO', '44.13947164825515', '10.916190994558958', 'PM2.5', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:56', '2024-03-14 11:15:56', NULL);
+INSERT INTO `scraping_data` VALUES (373, 'ISONZO', '44.84154333177718', '11.6121729864207', 'PM10', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:57', '2024-03-14 11:15:57', NULL);
+INSERT INTO `scraping_data` VALUES (374, 'ISONZO', '44.84154333177718', '11.6121729864207', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:57', '2024-03-14 11:15:57', NULL);
+INSERT INTO `scraping_data` VALUES (375, 'ISONZO', '44.84154333177718', '11.6121729864207', 'C6H6 (Benzene)', 0.9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:57', '2024-03-14 11:15:57', NULL);
+INSERT INTO `scraping_data` VALUES (376, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'PM10', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:57', '2024-03-14 11:15:57', NULL);
+INSERT INTO `scraping_data` VALUES (377, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'O3 (Ozono)', 30, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:57', '2024-03-14 11:15:57', NULL);
+INSERT INTO `scraping_data` VALUES (378, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'NO2 (Biossido di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:58', '2024-03-14 11:15:58', NULL);
+INSERT INTO `scraping_data` VALUES (379, 'GHERARDI', '44.838811311844914', '11.960294069157424', 'PM2.5', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:58', '2024-03-14 11:15:58', NULL);
+INSERT INTO `scraping_data` VALUES (380, 'CENTO', '44.73206179430421', '11.298683230587722', 'PM10', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:58', '2024-03-14 11:15:58', NULL);
+INSERT INTO `scraping_data` VALUES (381, 'CENTO', '44.73206179430421', '11.298683230587722', 'O3 (Ozono)', 13, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:58', '2024-03-14 11:15:58', NULL);
+INSERT INTO `scraping_data` VALUES (382, 'CENTO', '44.73206179430421', '11.298683230587722', 'NO2 (Biossido di azoto)', 40, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:59', '2024-03-14 11:15:59', NULL);
+INSERT INTO `scraping_data` VALUES (383, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'PM10', 19, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:59', '2024-03-14 11:15:59', NULL);
+INSERT INTO `scraping_data` VALUES (384, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'O3 (Ozono)', 18, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:59', '2024-03-14 11:15:59', NULL);
+INSERT INTO `scraping_data` VALUES (385, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'NO2 (Biossido di azoto)', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:15:59', '2024-03-14 11:15:59', NULL);
+INSERT INTO `scraping_data` VALUES (386, 'VILLA FULVIA', '44.82331892130918', '11.648651264570564', 'PM2.5', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:00', '2024-03-14 11:16:00', NULL);
+INSERT INTO `scraping_data` VALUES (387, 'OSTELLATO', '44.73995385648027', '11.94097876124348', 'O3 (Ozono)', 25, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:00', '2024-03-14 11:16:00', NULL);
+INSERT INTO `scraping_data` VALUES (388, 'SAN LAZZARO', '44.466232977185605', '11.415629343017232', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:00', '2024-03-14 11:16:00', NULL);
+INSERT INTO `scraping_data` VALUES (389, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NOX (Ossidi di azoto)', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:00', '2024-03-14 11:16:00', NULL);
+INSERT INTO `scraping_data` VALUES (390, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'PM10', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:01', '2024-03-14 11:16:01', NULL);
+INSERT INTO `scraping_data` VALUES (391, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'O3 (Ozono)', 39, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:02', '2024-03-14 11:16:02', NULL);
+INSERT INTO `scraping_data` VALUES (392, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'PM10', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:02', '2024-03-14 11:16:02', NULL);
+INSERT INTO `scraping_data` VALUES (393, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'O3 (Ozono)', 55, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:02', '2024-03-14 11:16:02', NULL);
+INSERT INTO `scraping_data` VALUES (394, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'NO2 (Biossido di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:02', '2024-03-14 11:16:02', NULL);
+INSERT INTO `scraping_data` VALUES (395, 'CITTADELLA', '44.7914696910312', '10.329985440788905', 'PM2.5', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:03', '2024-03-14 11:16:03', NULL);
+INSERT INTO `scraping_data` VALUES (396, 'PARCO BERTOZZI', '44.284601', '11.872664', 'NO2 (Biossido di azoto)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:03', '2024-03-14 11:16:03', NULL);
+INSERT INTO `scraping_data` VALUES (397, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NO2 (Biossido di azoto)', 24, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:03', '2024-03-14 11:16:03', NULL);
+INSERT INTO `scraping_data` VALUES (398, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NOX (Ossidi di azoto)', 28, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:03', '2024-03-14 11:16:03', NULL);
+INSERT INTO `scraping_data` VALUES (399, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'C6H6 (Benzene)', 0.7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:04', '2024-03-14 11:16:04', NULL);
+INSERT INTO `scraping_data` VALUES (400, 'MONTEBELLO', '44.78568905412552', '10.335477673094584', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:04', '2024-03-14 11:16:04', NULL);
+INSERT INTO `scraping_data` VALUES (401, 'BADIA', '44.65726946670704', '10.288366311688732', 'PM10', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:05', '2024-03-14 11:16:05', NULL);
+INSERT INTO `scraping_data` VALUES (402, 'BADIA', '44.65726946670704', '10.288366311688732', 'O3 (Ozono)', 67, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:05', '2024-03-14 11:16:05', NULL);
+INSERT INTO `scraping_data` VALUES (403, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:05', '2024-03-14 11:16:05', NULL);
+INSERT INTO `scraping_data` VALUES (404, 'BADIA', '44.65726946670704', '10.288366311688732', 'NO2 (Biossido di azoto)', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:06', '2024-03-14 11:16:06', NULL);
+INSERT INTO `scraping_data` VALUES (405, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'O3 (Ozono)', 35, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:06', '2024-03-14 11:16:06', NULL);
+INSERT INTO `scraping_data` VALUES (406, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NO2 (Biossido di azoto)', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:06', '2024-03-14 11:16:06', NULL);
+INSERT INTO `scraping_data` VALUES (407, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NOX (Ossidi di azoto)', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:06', '2024-03-14 11:16:06', NULL);
+INSERT INTO `scraping_data` VALUES (408, 'SARAGAT', '44.925020464110574', '10.3709154501087', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:07', '2024-03-14 11:16:07', NULL);
+INSERT INTO `scraping_data` VALUES (409, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'PM10', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:07', '2024-03-14 11:16:07', NULL);
+INSERT INTO `scraping_data` VALUES (410, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'O3 (Ozono)', 53, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:07', '2024-03-14 11:16:07', NULL);
+INSERT INTO `scraping_data` VALUES (411, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NO2 (Biossido di azoto)', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:07', '2024-03-14 11:16:07', NULL);
+INSERT INTO `scraping_data` VALUES (412, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NOX (Ossidi di azoto)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:08', '2024-03-14 11:16:08', NULL);
+INSERT INTO `scraping_data` VALUES (413, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:08', '2024-03-14 11:16:08', NULL);
+INSERT INTO `scraping_data` VALUES (414, 'CASTELLARANO', '44.51528733713384', '10.73291821281062', 'PM2.5', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:08', '2024-03-14 11:16:08', NULL);
+INSERT INTO `scraping_data` VALUES (415, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'PM10', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:08', '2024-03-14 11:16:08', NULL);
+INSERT INTO `scraping_data` VALUES (416, 'BADIA', '44.65726946670704', '10.288366311688732', 'PM2.5', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:09', '2024-03-14 11:16:09', NULL);
+INSERT INTO `scraping_data` VALUES (417, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'O3 (Ozono)', 42, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:09', '2024-03-14 11:16:09', NULL);
+INSERT INTO `scraping_data` VALUES (418, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NOX (Ossidi di azoto)', 4, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:10', '2024-03-14 11:16:10', NULL);
+INSERT INTO `scraping_data` VALUES (419, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'O3 (Ozono)', 63, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:10', '2024-03-14 11:16:10', NULL);
+INSERT INTO `scraping_data` VALUES (420, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'PM10', 21, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:10', '2024-03-14 11:16:10', NULL);
+INSERT INTO `scraping_data` VALUES (421, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NO2 (Biossido di azoto)', 49, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:11', '2024-03-14 11:16:11', NULL);
+INSERT INTO `scraping_data` VALUES (422, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NOX (Ossidi di azoto)', 75, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:11', '2024-03-14 11:16:11', NULL);
+INSERT INTO `scraping_data` VALUES (423, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H6 (Benzene)', 2.9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:11', '2024-03-14 11:16:11', NULL);
+INSERT INTO `scraping_data` VALUES (424, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H5-CH3 (Toluene)', 11.4, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:11', '2024-03-14 11:16:11', NULL);
+INSERT INTO `scraping_data` VALUES (425, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'NO (Monossido di azoto)', 18, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:12', '2024-03-14 11:16:12', NULL);
+INSERT INTO `scraping_data` VALUES (426, 'FLAMINIA', '44.051143568911165', '12.574738159887808', 'C6H4(CH3)2 (o-xylene)', 2.7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:12', '2024-03-14 11:16:12', NULL);
+INSERT INTO `scraping_data` VALUES (427, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'PM10', 21, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:12', '2024-03-14 11:16:12', NULL);
+INSERT INTO `scraping_data` VALUES (428, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'O3 (Ozono)', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:13', '2024-03-14 11:16:13', NULL);
+INSERT INTO `scraping_data` VALUES (429, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NO2 (Biossido di azoto)', 45, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:13', '2024-03-14 11:16:13', NULL);
+INSERT INTO `scraping_data` VALUES (430, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NOX (Ossidi di azoto)', 54, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:13', '2024-03-14 11:16:13', NULL);
+INSERT INTO `scraping_data` VALUES (431, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'NO2 (Biossido di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:14', '2024-03-14 11:16:14', NULL);
+INSERT INTO `scraping_data` VALUES (432, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'NO (Monossido di azoto)', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:14', '2024-03-14 11:16:14', NULL);
+INSERT INTO `scraping_data` VALUES (433, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'PM10', 13, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:14', '2024-03-14 11:16:14', NULL);
+INSERT INTO `scraping_data` VALUES (434, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'O3 (Ozono)', 45, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:14', '2024-03-14 11:16:14', NULL);
+INSERT INTO `scraping_data` VALUES (435, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NO2 (Biossido di azoto)', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:15', '2024-03-14 11:16:15', NULL);
+INSERT INTO `scraping_data` VALUES (436, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NOX (Ossidi di azoto)', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:15', '2024-03-14 11:16:15', NULL);
+INSERT INTO `scraping_data` VALUES (437, 'VERUCCHIO', '44.01291507094706', '12.42001204597882', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:15', '2024-03-14 11:16:15', NULL);
+INSERT INTO `scraping_data` VALUES (438, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'O3 (Ozono)', 41, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:15', '2024-03-14 11:16:15', NULL);
+INSERT INTO `scraping_data` VALUES (439, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NO2 (Biossido di azoto)', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:15', '2024-03-14 11:16:15', NULL);
+INSERT INTO `scraping_data` VALUES (440, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NOX (Ossidi di azoto)', 20, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:16', '2024-03-14 11:16:16', NULL);
+INSERT INTO `scraping_data` VALUES (441, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'NO (Monossido di azoto)', 2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:16', '2024-03-14 11:16:16', NULL);
+INSERT INTO `scraping_data` VALUES (442, 'SAN CLEMENTE', '43.930866886665214', '12.626339131514657', 'PM2.5', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:17', '2024-03-14 11:16:17', NULL);
+INSERT INTO `scraping_data` VALUES (443, 'SAN LEO', '43.90625307987227', '12.400282672449055', 'PM10', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:18', '2024-03-14 11:16:18', NULL);
+INSERT INTO `scraping_data` VALUES (444, 'MARECCHIA', '44.06334655810907', '12.551539643389924', 'PM2.5', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:18', '2024-03-14 11:16:18', NULL);
+INSERT INTO `scraping_data` VALUES (445, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NO2 (Biossido di azoto)', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:19', '2024-03-14 11:16:19', NULL);
+INSERT INTO `scraping_data` VALUES (446, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NOX (Ossidi di azoto)', 13, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:19', '2024-03-14 11:16:19', NULL);
+INSERT INTO `scraping_data` VALUES (447, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'NO (Monossido di azoto)', 0, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:20', '2024-03-14 11:16:20', NULL);
+INSERT INTO `scraping_data` VALUES (448, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'NO2 (Biossido di azoto)', 40, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:20', '2024-03-14 11:16:20', NULL);
+INSERT INTO `scraping_data` VALUES (449, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'NO (Monossido di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:21', '2024-03-14 11:16:21', NULL);
+INSERT INTO `scraping_data` VALUES (450, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'PM2.5', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:21', '2024-03-14 11:16:21', NULL);
+INSERT INTO `scraping_data` VALUES (451, 'SAN FRANCESCO', '44.54119146442797', '10.8188926493122', 'PM10', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:21', '2024-03-14 11:16:21', NULL);
+INSERT INTO `scraping_data` VALUES (452, 'SAN FRANCESCO', '44.54119146442797', '10.8188926493122', 'NO2 (Biossido di azoto)', 18, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:22', '2024-03-14 11:16:22', NULL);
+INSERT INTO `scraping_data` VALUES (453, 'SAN FRANCESCO', '44.54119146442797', '10.8188926493122', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:22', '2024-03-14 11:16:22', NULL);
+INSERT INTO `scraping_data` VALUES (454, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'PM10', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:22', '2024-03-14 11:16:22', NULL);
+INSERT INTO `scraping_data` VALUES (455, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'O3 (Ozono)', 23, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:22', '2024-03-14 11:16:22', NULL);
+INSERT INTO `scraping_data` VALUES (456, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'NO2 (Biossido di azoto)', 21, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:23', '2024-03-14 11:16:23', NULL);
+INSERT INTO `scraping_data` VALUES (457, 'GAVELLO', '44.92783364073103', '11.177964450333798', 'PM2.5', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:23', '2024-03-14 11:16:23', NULL);
+INSERT INTO `scraping_data` VALUES (458, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'PM10', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:23', '2024-03-14 11:16:23', NULL);
+INSERT INTO `scraping_data` VALUES (459, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'O3 (Ozono)', 11, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:23', '2024-03-14 11:16:23', NULL);
+INSERT INTO `scraping_data` VALUES (460, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'O3 (Ozono)', 54, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:24', '2024-03-14 11:16:24', NULL);
+INSERT INTO `scraping_data` VALUES (461, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'NO (Monossido di azoto)', 3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:24', '2024-03-14 11:16:24', NULL);
+INSERT INTO `scraping_data` VALUES (462, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'PM2.5', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:24', '2024-03-14 11:16:24', NULL);
+INSERT INTO `scraping_data` VALUES (463, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'PM10', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:25', '2024-03-14 11:16:25', NULL);
+INSERT INTO `scraping_data` VALUES (464, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'O3 (Ozono)', 67, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (465, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NO2 (Biossido di azoto)', 8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (466, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NOX (Ossidi di azoto)', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (467, 'LUGAGNANO', '44.82293766646468', '9.829360661244545', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (468, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'PM10', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (469, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'NO2 (Biossido di azoto)', 21, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (470, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'CO (Monossido di carbonio)', 0.3, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:26', '2024-03-14 11:16:26', NULL);
+INSERT INTO `scraping_data` VALUES (471, 'GIORDANI-FARNESE', '45.04789860335775', '9.692249067302894', 'C6H6 (Benzene)', 0.8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:27', '2024-03-14 11:16:27', NULL);
+INSERT INTO `scraping_data` VALUES (472, 'PARCO EDILCARANI', '44.53942105479787', '10.791372046408874', 'NO2 (Biossido di azoto)', 16, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:27', '2024-03-14 11:16:27', NULL);
+INSERT INTO `scraping_data` VALUES (473, 'PARCO FERRARI', '44.65061168416453', '10.90632676345164', 'PM10', 15, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:28', '2024-03-14 11:16:28', NULL);
+INSERT INTO `scraping_data` VALUES (474, 'REMESINA', '44.79942646080965', '10.88326841859053', 'NO (Monossido di azoto)', 17, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:29', '2024-03-14 11:16:29', NULL);
+INSERT INTO `scraping_data` VALUES (475, 'REMESINA', '44.79942646080965', '10.88326841859053', 'NO2 (Biossido di azoto)', 57, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (476, 'S. LAZZARO', '44.68809200188603', '10.662600361181374', 'PM2.5', 7, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (477, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'PM10', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (478, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NO2 (Biossido di azoto)', 2.9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (479, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NOX (Ossidi di azoto)', 3.8, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (480, 'FEBBIO', '44.29974369985671', '10.430049171853796', 'NO (Monossido di azoto)', 0.6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:30', '2024-03-14 11:16:30', NULL);
+INSERT INTO `scraping_data` VALUES (481, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'PM10', 14, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:31', '2024-03-14 11:16:31', NULL);
+INSERT INTO `scraping_data` VALUES (482, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'O3 (Ozono)', 10, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:31', '2024-03-14 11:16:31', NULL);
+INSERT INTO `scraping_data` VALUES (483, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NO2 (Biossido di azoto)', 30, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:31', '2024-03-14 11:16:31', NULL);
+INSERT INTO `scraping_data` VALUES (484, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NOX (Ossidi di azoto)', 32, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:31', '2024-03-14 11:16:31', NULL);
+INSERT INTO `scraping_data` VALUES (485, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'NO (Monossido di azoto)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (486, 'S. ROCCO', '44.8727852054837', '10.663785437645098', 'PM2.5', 9, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (487, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'PM10', 23, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (488, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NO2 (Biossido di azoto)', 67, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (489, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NOX (Ossidi di azoto)', 117, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (490, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'CO (Monossido di carbonio)', 1.1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (491, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H6 (Benzene)', 2.2, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (492, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H5-CH3 (Toluene)', 7.5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:32', '2024-03-14 11:16:32', NULL);
+INSERT INTO `scraping_data` VALUES (493, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'NO (Monossido di azoto)', 33, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:33', '2024-03-14 11:16:33', NULL);
+INSERT INTO `scraping_data` VALUES (494, 'TIMAVO', '44.698600313316845', '10.621766750217366', 'C6H4(CH3)2 (o-xylene)', 1.6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:33', '2024-03-14 11:16:33', NULL);
+INSERT INTO `scraping_data` VALUES (495, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'PM10', 19, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:33', '2024-03-14 11:16:33', NULL);
+INSERT INTO `scraping_data` VALUES (496, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'NO2 (Biossido di azoto)', 47, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:33', '2024-03-14 11:16:33', NULL);
+INSERT INTO `scraping_data` VALUES (497, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'C6H6 (Benzene)', 1, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:33', '2024-03-14 11:16:33', NULL);
+INSERT INTO `scraping_data` VALUES (498, 'GIARDINI', '44.63602712923712', '10.904739406479576', 'NO (Monossido di azoto)', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:34', '2024-03-14 11:16:34', NULL);
+INSERT INTO `scraping_data` VALUES (499, 'REMESINA', '44.79942646080965', '10.88326841859053', 'PM10', 19, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:34', '2024-03-14 11:16:34', NULL);
+INSERT INTO `scraping_data` VALUES (500, 'REMESINA', '44.79942646080965', '10.88326841859053', 'O3 (Ozono)', 5, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:34', '2024-03-14 11:16:34', NULL);
+INSERT INTO `scraping_data` VALUES (501, 'BESENZONE', '44.98855540426126', '10.018195275084834', 'NO2 (Biossido di azoto)', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:34', '2024-03-14 11:16:34', NULL);
+INSERT INTO `scraping_data` VALUES (502, 'PARCO BERTOZZI', '44.284601', '11.872664', 'PM2.5', 6, 'dati.arpae.it', '2024-03-13 00:00:00', '2024-03-14 11:16:34', '2024-03-14 11:16:34', NULL);
+INSERT INTO `scraping_data` VALUES (503, 'FI-BOBOLI', '43.76421343', '11.24807368', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:16:48', '2024-03-14 11:16:48', NULL);
+INSERT INTO `scraping_data` VALUES (504, 'FI-SIGNA', '43.79323432', '11.09784928', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:16:50', '2024-03-14 11:16:50', NULL);
+INSERT INTO `scraping_data` VALUES (505, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'PM10', 26, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:16:56', '2024-03-14 11:16:56', NULL);
+INSERT INTO `scraping_data` VALUES (506, 'FI-BASSI', '43.78565057', '11.28663204', 'PM10', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:16:57', '2024-03-14 11:16:57', NULL);
+INSERT INTO `scraping_data` VALUES (507, 'FI-SCANDICCI', '43.75596846', '11.19189343', 'PM10', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:02', '2024-03-14 11:17:02', NULL);
+INSERT INTO `scraping_data` VALUES (508, 'FI-MOSSE', '43.7848074', '11.23045307', 'PM10', 29, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:03', '2024-03-14 11:17:03', NULL);
+INSERT INTO `scraping_data` VALUES (509, 'PT-MONTALE', '43.91514194', '11.00596674', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:03', '2024-03-14 11:17:03', NULL);
+INSERT INTO `scraping_data` VALUES (510, 'PT-SIGNORELLI', '43.93985801', '10.90430377', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:03', '2024-03-14 11:17:03', NULL);
+INSERT INTO `scraping_data` VALUES (511, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'PM10', 19, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:04', '2024-03-14 11:17:04', NULL);
+INSERT INTO `scraping_data` VALUES (512, 'PO-ROMA', '43.87339368', '11.0923088', 'PM10', 19, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:04', '2024-03-14 11:17:04', NULL);
+INSERT INTO `scraping_data` VALUES (513, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:04', '2024-03-14 11:17:04', NULL);
+INSERT INTO `scraping_data` VALUES (514, 'LI-PIOMBINO-PARCO-VIII-MARZO', '42.93192949', '10.52426026', 'PM10', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:05', '2024-03-14 11:17:05', NULL);
+INSERT INTO `scraping_data` VALUES (515, 'LI-COTONE', '42.9380578', '10.53332139', 'PM10', 9, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:05', '2024-03-14 11:17:05', NULL);
+INSERT INTO `scraping_data` VALUES (516, 'LI-LAPIRA', '43.5671449', '10.33132363', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:05', '2024-03-14 11:17:05', NULL);
+INSERT INTO `scraping_data` VALUES (517, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'PM10', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:06', '2024-03-14 11:17:06', NULL);
+INSERT INTO `scraping_data` VALUES (518, 'GR-URSS', '42.77768351', '11.11821164', 'PM10', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:06', '2024-03-14 11:17:06', NULL);
+INSERT INTO `scraping_data` VALUES (519, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:06', '2024-03-14 11:17:06', NULL);
+INSERT INTO `scraping_data` VALUES (520, 'GR-SONNINO', '42.76150048', '11.10902014', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:07', '2024-03-14 11:17:07', NULL);
+INSERT INTO `scraping_data` VALUES (521, 'MS-COLOMBAROTTO', '44.07747561', '10.09632071', 'PM10', 16, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:07', '2024-03-14 11:17:07', NULL);
+INSERT INTO `scraping_data` VALUES (522, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'PM10', 24, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:07', '2024-03-14 11:17:07', NULL);
+INSERT INTO `scraping_data` VALUES (523, 'LU-MICHELETTO', '43.84279677', '10.51128178', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:08', '2024-03-14 11:17:08', NULL);
+INSERT INTO `scraping_data` VALUES (524, 'PI-PASSI', '43.73782873', '10.40069048', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:08', '2024-03-14 11:17:08', NULL);
+INSERT INTO `scraping_data` VALUES (525, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'PM10', 23, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:08', '2024-03-14 11:17:08', NULL);
+INSERT INTO `scraping_data` VALUES (526, 'LU-SAN-CONCORDIO', '43.83249909', '10.50086046', 'PM10', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:09', '2024-03-14 11:17:09', NULL);
+INSERT INTO `scraping_data` VALUES (527, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'PM10', 23, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:09', '2024-03-14 11:17:09', NULL);
+INSERT INTO `scraping_data` VALUES (528, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:10', '2024-03-14 11:17:10', NULL);
+INSERT INTO `scraping_data` VALUES (529, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'PM10', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:10', '2024-03-14 11:17:10', NULL);
+INSERT INTO `scraping_data` VALUES (530, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'PM10', 13, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:10', '2024-03-14 11:17:10', NULL);
+INSERT INTO `scraping_data` VALUES (531, 'FI-FIGLINE', '43.62302512', '11.46693498', 'PM10', 15, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:11', '2024-03-14 11:17:11', NULL);
+INSERT INTO `scraping_data` VALUES (532, 'SI-BRACCI', '43.33845906', '11.32447156', 'PM10', 13, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:11', '2024-03-14 11:17:11', NULL);
+INSERT INTO `scraping_data` VALUES (533, 'PI-MONTECERBOLI', '43.24674333', '10.88081999', 'PM10', 7, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:12', '2024-03-14 11:17:12', NULL);
+INSERT INTO `scraping_data` VALUES (534, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'PM10', 3, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:12', '2024-03-14 11:17:12', NULL);
+INSERT INTO `scraping_data` VALUES (535, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'PM10', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:12', '2024-03-14 11:17:12', NULL);
+INSERT INTO `scraping_data` VALUES (536, 'LU-FORNOLI', '44.00557256', '10.55985178', 'PM10', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:13', '2024-03-14 11:17:13', NULL);
+INSERT INTO `scraping_data` VALUES (537, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'PM2_5', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:16', '2024-03-14 11:17:16', NULL);
+INSERT INTO `scraping_data` VALUES (538, 'FI-BASSI', '43.78565057', '11.28663204', 'PM2_5', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:16', '2024-03-14 11:17:16', NULL);
+INSERT INTO `scraping_data` VALUES (539, 'PT-MONTALE', '43.91514194', '11.00596674', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:17', '2024-03-14 11:17:17', NULL);
+INSERT INTO `scraping_data` VALUES (540, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:18', '2024-03-14 11:17:18', NULL);
+INSERT INTO `scraping_data` VALUES (541, 'PO-ROMA', '43.87339368', '11.0923088', 'PM2_5', 12, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:19', '2024-03-14 11:17:19', NULL);
+INSERT INTO `scraping_data` VALUES (542, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'PM2_5', 14, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:19', '2024-03-14 11:17:19', NULL);
+INSERT INTO `scraping_data` VALUES (543, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'PM2_5', 6, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:20', '2024-03-14 11:17:20', NULL);
+INSERT INTO `scraping_data` VALUES (544, 'GR-URSS', '42.77768351', '11.11821164', 'PM2_5', 5, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:20', '2024-03-14 11:17:20', NULL);
+INSERT INTO `scraping_data` VALUES (545, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'PM2_5', 9, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:21', '2024-03-14 11:17:21', NULL);
+INSERT INTO `scraping_data` VALUES (546, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'PM2_5', 5, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:21', '2024-03-14 11:17:21', NULL);
+INSERT INTO `scraping_data` VALUES (547, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'PM2_5', 11, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:22', '2024-03-14 11:17:22', NULL);
+INSERT INTO `scraping_data` VALUES (548, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'PM2_5', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:22', '2024-03-14 11:17:22', NULL);
+INSERT INTO `scraping_data` VALUES (549, 'PI-PASSI', '43.73782873', '10.40069048', 'PM2_5', 8, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:22', '2024-03-14 11:17:22', NULL);
+INSERT INTO `scraping_data` VALUES (550, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'PM2_5', 10, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:22', '2024-03-14 11:17:22', NULL);
+INSERT INTO `scraping_data` VALUES (551, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'PM2_5', 2, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:23', '2024-03-14 11:17:23', NULL);
+INSERT INTO `scraping_data` VALUES (552, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'PM2_5', 7, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:23', '2024-03-14 11:17:23', NULL);
+INSERT INTO `scraping_data` VALUES (553, 'FI-SIGNA', '43.79323432', '11.09784928', 'NO2', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:27', '2024-03-14 11:17:27', NULL);
+INSERT INTO `scraping_data` VALUES (554, 'FI-MOSSE', '43.7848074', '11.23045307', 'NO2', 64, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:29', '2024-03-14 11:17:29', NULL);
+INSERT INTO `scraping_data` VALUES (555, 'FI-SCANDICCI', '43.75596846', '11.19189343', 'NO2', 40, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:29', '2024-03-14 11:17:29', NULL);
+INSERT INTO `scraping_data` VALUES (556, 'FI-BASSI', '43.78565057', '11.28663204', 'NO2', 50, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:30', '2024-03-14 11:17:30', NULL);
+INSERT INTO `scraping_data` VALUES (557, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'NO2', 79, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:32', '2024-03-14 11:17:32', NULL);
+INSERT INTO `scraping_data` VALUES (558, 'PT-SIGNORELLI', '43.93985801', '10.90430377', 'NO2', 32, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:33', '2024-03-14 11:17:33', NULL);
+INSERT INTO `scraping_data` VALUES (559, 'PT-MONTALE', '43.91514194', '11.00596674', 'NO2', 32, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:34', '2024-03-14 11:17:34', NULL);
+INSERT INTO `scraping_data` VALUES (560, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'NO2', 55, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:34', '2024-03-14 11:17:34', NULL);
+INSERT INTO `scraping_data` VALUES (561, 'PO-ROMA', '43.87339368', '11.0923088', 'NO2', 67, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:34', '2024-03-14 11:17:34', NULL);
+INSERT INTO `scraping_data` VALUES (562, 'GR-SONNINO', '42.76150048', '11.10902014', 'NO2', 65, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:34', '2024-03-14 11:17:34', NULL);
+INSERT INTO `scraping_data` VALUES (563, 'LI-LAPIRA', '43.5671449', '10.33132363', 'NO2', 35, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:34', '2024-03-14 11:17:34', NULL);
+INSERT INTO `scraping_data` VALUES (564, 'MS-MARINA-VECCHIA', '44.03110472', '10.1327781', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:35', '2024-03-14 11:17:35', NULL);
+INSERT INTO `scraping_data` VALUES (565, 'LI-PIOMBINO-PARCO-VIII-MARZO', '42.93192949', '10.52426026', 'NO2', 31, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:35', '2024-03-14 11:17:35', NULL);
+INSERT INTO `scraping_data` VALUES (566, 'LI-CAPPIELLO', '43.51897943', '10.32074946', 'NO2', 33, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:35', '2024-03-14 11:17:35', NULL);
+INSERT INTO `scraping_data` VALUES (567, 'MS-COLOMBAROTTO', '44.07747561', '10.09632071', 'NO2', 38, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (568, 'LI-COTONE', '42.9380578', '10.53332139', 'NO2', 22, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (569, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'NO2', 85, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (570, 'GR-URSS', '42.77768351', '11.11821164', 'NO2', 34, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (571, 'GR-MAREMMA', '42.66945274', '11.09331159', 'NO2', 4, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (572, 'LU-VIAREGGIO', '43.88291445', '10.24402836', 'NO2', 63, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (573, 'LU-MICHELETTO', '43.84279677', '10.51128178', 'NO2', 36, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:36', '2024-03-14 11:17:36', NULL);
+INSERT INTO `scraping_data` VALUES (574, 'LU-CARIGNANO', '43.86798461', '10.45255594', 'NO2', 18, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:37', '2024-03-14 11:17:37', NULL);
+INSERT INTO `scraping_data` VALUES (575, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'NO2', 36, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:37', '2024-03-14 11:17:37', NULL);
+INSERT INTO `scraping_data` VALUES (576, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'NO2', 33, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:38', '2024-03-14 11:17:38', NULL);
+INSERT INTO `scraping_data` VALUES (577, 'LU-SAN-CONCORDIO', '43.83249909', '10.50086046', 'NO2', 24, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:38', '2024-03-14 11:17:38', NULL);
+INSERT INTO `scraping_data` VALUES (578, 'PI-PASSI', '43.73782873', '10.40069048', 'NO2', 50, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:38', '2024-03-14 11:17:38', NULL);
+INSERT INTO `scraping_data` VALUES (579, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'NO2', 68, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:38', '2024-03-14 11:17:38', NULL);
+INSERT INTO `scraping_data` VALUES (580, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'NO2', 74, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (581, 'AR-ACROPOLI', '43.46007082', '11.88802566', 'NO2', 35, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (582, 'FI-FIGLINE', '43.62302512', '11.46693498', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (583, 'SI-BRACCI', '43.33845906', '11.32447156', 'NO2', 65, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (584, 'SI-POGGIBONSI', '43.47191373', '11.14103435', 'NO2', 43, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (585, 'AR-CASA-STABBI', '43.6591764', '11.90068353', 'NO2', 3, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:39', '2024-03-14 11:17:39', NULL);
+INSERT INTO `scraping_data` VALUES (586, 'LU-FORNOLI', '44.00557256', '10.55985178', 'NO2', 21, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:40', '2024-03-14 11:17:40', NULL);
+INSERT INTO `scraping_data` VALUES (587, 'PI-MONTECERBOLI', '43.24674333', '10.88081999', 'NO2', 17, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:40', '2024-03-14 11:17:40', NULL);
+INSERT INTO `scraping_data` VALUES (588, 'LU-CARIGNANO', '43.86798461', '10.45255594', 'O3', 105, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:43', '2024-03-14 11:17:43', NULL);
+INSERT INTO `scraping_data` VALUES (589, 'PI-PASSI', '43.73782873', '10.40069048', 'O3', 85, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:43', '2024-03-14 11:17:43', NULL);
+INSERT INTO `scraping_data` VALUES (590, 'GR-MAREMMA', '42.66945274', '11.09331159', 'O3', 91, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:43', '2024-03-14 11:17:43', NULL);
+INSERT INTO `scraping_data` VALUES (591, 'PI-SANTA-CROCE-COOP', '43.7122121', '10.77070778', 'O3', 80, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:44', '2024-03-14 11:17:44', NULL);
+INSERT INTO `scraping_data` VALUES (592, 'FI-GRAMSCI', '43.77206683', '11.2711673', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:47', '2024-03-14 11:17:47', NULL);
+INSERT INTO `scraping_data` VALUES (593, 'PO-FERRUCCI', '43.87388267', '11.10441092', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:48', '2024-03-14 11:17:48', NULL);
+INSERT INTO `scraping_data` VALUES (594, 'LI-COTONE', '42.9380578', '10.53332139', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:48', '2024-03-14 11:17:48', NULL);
+INSERT INTO `scraping_data` VALUES (595, 'LI-CARDUCCI', '43.55374128', '10.32872587', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:48', '2024-03-14 11:17:48', NULL);
+INSERT INTO `scraping_data` VALUES (596, 'PI-BORGHETTO', '43.71301325', '10.40959577', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:48', '2024-03-14 11:17:48', NULL);
+INSERT INTO `scraping_data` VALUES (597, 'AR-REPUBBLICA', '43.46160209', '11.87586169', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:48', '2024-03-14 11:17:48', NULL);
+INSERT INTO `scraping_data` VALUES (598, 'SI-BRACCI', '43.33845906', '11.32447156', 'CO', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:49', '2024-03-14 11:17:49', NULL);
+INSERT INTO `scraping_data` VALUES (599, 'FI-BASSI', '43.78565057', '11.28663204', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:51', '2024-03-14 11:17:51', NULL);
+INSERT INTO `scraping_data` VALUES (600, 'LI-LAPIRA', '43.5671449', '10.33132363', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:52', '2024-03-14 11:17:52', NULL);
+INSERT INTO `scraping_data` VALUES (601, 'LU-CAPANNORI', '43.83984146', '10.57283006', 'SO2', 0, 'arpat.toscana.it', '2024-03-12 00:00:00', '2024-03-14 11:17:53', '2024-03-14 11:17:53', NULL);
+
+-- ----------------------------
+-- Table structure for sources
+-- ----------------------------
+DROP TABLE IF EXISTS `sources`;
+CREATE TABLE `sources`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `source` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sources
+-- ----------------------------
+INSERT INTO `sources` VALUES (1, 'aqicn.org', NULL, NULL, NULL);
+INSERT INTO `sources` VALUES (2, 'aqi.in', NULL, NULL, NULL);
+INSERT INTO `sources` VALUES (3, 'arpat.toscana.it', NULL, NULL, NULL);
+
+-- ----------------------------
+-- Table structure for station_source_results
+-- ----------------------------
+DROP TABLE IF EXISTS `station_source_results`;
+CREATE TABLE `station_source_results`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_id` int(11) NULL DEFAULT NULL,
+  `source_id` int(11) NULL DEFAULT NULL,
+  `result_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of station_source_results
+-- ----------------------------
+INSERT INTO `station_source_results` VALUES (1, 1, 1, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 91, \'no2\': 28.0, \'co\': 0.0}', '2024-02-08 15:43:45', '2024-02-08 15:43:45', NULL);
+INSERT INTO `station_source_results` VALUES (2, 1, 2, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 31.1, \'no2\': 29.0, \'co\': 0}', '2024-02-08 15:44:08', '2024-02-08 15:44:08', NULL);
+INSERT INTO `station_source_results` VALUES (3, 1, 3, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 0, \'no2\': 61.0, \'co\': 1.2}', '2024-02-08 15:44:24', '2024-02-08 15:44:24', NULL);
+INSERT INTO `station_source_results` VALUES (4, 1, 1, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 91, \'no2\': 28.0, \'co\': 0.0}', '2024-02-08 16:23:57', '2024-02-08 16:23:57', NULL);
+INSERT INTO `station_source_results` VALUES (5, 1, 2, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 31.1, \'no2\': 29.0, \'co\': 0}', '2024-02-08 16:24:07', '2024-02-08 16:24:07', NULL);
+INSERT INTO `station_source_results` VALUES (6, 1, 3, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 0, \'no2\': 61.0, \'co\': 1.2}', '2024-02-08 16:24:22', '2024-02-08 16:24:22', NULL);
+INSERT INTO `station_source_results` VALUES (7, 1, 1, '{\'o3\': 0, \'pm10\': 18.0, \'pm25\': 42, \'no2\': 35.0, \'co\': 0.0}', '2024-02-28 11:13:01', '2024-02-28 11:13:01', NULL);
+INSERT INTO `station_source_results` VALUES (8, 1, 2, '{\'o3\': 0, \'pm10\': 19.0, \'pm25\': 10.0, \'no2\': 37.0, \'co\': 0}', '2024-02-28 11:13:09', '2024-02-28 11:13:09', NULL);
+INSERT INTO `station_source_results` VALUES (9, 1, 3, '{\'o3\': 0, \'pm10\': 0, \'pm25\': 0, \'no2\': 14.0, \'co\': 0.3}', '2024-02-28 11:13:21', '2024-02-28 11:13:21', NULL);
+INSERT INTO `station_source_results` VALUES (10, 1, 1, '{\'o3\': 0, \'pm10\': 18.0, \'pm25\': 42, \'no2\': 35.0, \'co\': 0.0}', '2024-02-28 11:16:25', '2024-02-28 11:16:25', NULL);
+
+-- ----------------------------
+-- Table structure for station_source_urls
+-- ----------------------------
+DROP TABLE IF EXISTS `station_source_urls`;
+CREATE TABLE `station_source_urls`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station_id` int(11) NULL DEFAULT NULL,
+  `source_id` int(11) NULL DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of station_source_urls
+-- ----------------------------
+INSERT INTO `station_source_urls` VALUES (1, 1, 1, 'https://aqicn.org/city/italy/toscana/firenze/fi-gramsci/', '2024-02-08 12:22:38', '2024-02-08 14:41:05', NULL);
+INSERT INTO `station_source_urls` VALUES (2, 1, 2, 'https://www.aqi.in/dashboard/italy/tuscany/florence/gramsci', '2024-02-08 12:22:38', '2024-02-08 14:41:05', NULL);
+INSERT INTO `station_source_urls` VALUES (3, 1, 3, 'https://www.arpat.toscana.it/temi-ambientali/aria/qualita-aria/rete_monitoraggio/scheda_stazione/FI-GRAMSCI', '2024-02-08 12:22:38', '2024-02-08 14:41:05', NULL);
+
+-- ----------------------------
+-- Table structure for stations
+-- ----------------------------
+DROP TABLE IF EXISTS `stations`;
+CREATE TABLE `stations`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `station` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `lat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `long` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of stations
+-- ----------------------------
+INSERT INTO `stations` VALUES (1, 'GRAMSCI', '0', '1', '2024-02-08 12:22:37', '2024-02-08 14:41:05', NULL);
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `deleted_at` datetime(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of users
+-- ----------------------------
+INSERT INTO `users` VALUES (1, 'admin',   '$2b$12$p9p6RvrDfBbQD0T9cLcMyOK91iVqYWpGWjXntpPcmyFKUZXdJNuUO', 'Administrator', '2022-01-24 09:34:17', '2021-12-27 10:45:31', NULL);
+
+SET FOREIGN_KEY_CHECKS = 1;

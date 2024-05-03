@@ -1,0 +1,42 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Edit Admin</h3>
+            <div class="card-tools">
+                <a type="button" class="btn btn-info btn-sm" href="/users">
+                    <i class="fa fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+        <form method="POST" action="/users/{{ data['id'] }}/update">
+	        <div class="card-body">
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Name</label>
+	        		<div class="col-md-5">
+	        			<input type="text" class="form-control" placeholder="Name" name="name" required="" value="{{ data['name'] }}">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Username</label>
+	        		<div class="col-md-5">
+	        			<input type="text" class="form-control" placeholder="Username" name="username" required="" value="{{ data['username'] }}">
+	        		</div>
+	        	</div>
+
+	        	<div class="form-group row">
+	        		<label class="col-md-2 col-form-label">Password</label>
+	        		<div class="col-md-5">
+	        			<input type="password" class="form-control" placeholder="Password" name="password">
+	        			<small>*) Isi untuk merubah password</small>
+	        		</div>
+	        	</div>
+	        </div>
+	        <div class="card-footer">
+	        	<button class="btn btn-primary">Update</button>
+	        </div>
+        </form>
+    </div>
+{% endblock  %}

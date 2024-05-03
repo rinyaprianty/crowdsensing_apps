@@ -1,0 +1,132 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-2">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Select Sensor</h3>
+			</div>
+			<div class="card-body">
+				<div class="form-group">
+					<select class="select2" data-dropdown-css-class="select2-purple" id="sensors" multiple="multiple" data-placeholder="Select Sensors" style="width: 100%;">
+						{% for i in list_sensor %}
+							<option value="{{ i['sensor'] }}">{{ i['sensor'] }}</option>
+						{% endfor %}
+					</select>
+				</div>
+
+				<button class="btn btn-primary w-100" type="button" onclick="getData()">Show on maps</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<div id="map" style="width:100%; height: 700px;"></div>
+	</div>
+</div>
+
+{% endblock  %}
+
+{% block script %}
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNeoQkOAGs0KI_PRytIWNg3b-2CiPoy58&callback=initMap">
+</script>
+
+<script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+<script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/data.json"></script>
+<script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerwithlabel.js"></script>
+
+<script type="text/javascript">
+	function getData()
+	{
+		var sensors = $("#sensors").val();
+		if (sensors.length > 0){
+			console.log(sensors.join(', '));
+
+			$.ajax({
+				url: '/maps/get-data',
+				type: 'GET',
+				dataType: 'json',
+				data: {sensors: sensors.join(', ')},
+			})
+			.done(function(e) {
+				var location = []
+				var sensor_values = []
+				$.each(e, function(index, val) {
+					// console.log(val)
+					 location.push({lat: val.lat, lng: val.lng, description:"<b>Station Name : </b> "+val.station_name+" </br> <b>Source : </b>"+val.source+" "});
+					 sensor_values.push(val.sensor_value);
+				});
+				console.log(location);
+				console.log(sensor_values);
+				setTimeout(function() {
+					initMap(location, sensor_values);
+				}, 1000);
+				
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		}
+	}
+</script>
+
+<script>
+        // Initialize the map
+        function initMap(locations, sensor_values) {
+            // Map options
+            var mapOptions = {
+                zoom: 5, // Adjust the zoom level
+                center: {lat: locations[0]['lat'], lng: locations[0]['lng']} // Set the center of the map (USA)
+            };
+
+            // Create the map
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Define custom marker icons
+            var customIcon = {
+                url: 'https://maps.google.com/mapfiles/kml/shapes/square.png', // URL of the custom marker icon
+                scaledSize: new google.maps.Size(30, 30) // Size of the custom marker icon
+            };
+
+            // Loop through locations array to add markers with custom icons and descriptions
+            for (var i = 0; i < locations.length; i++) {
+                var location = locations[i];
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    icon: {
+				        path: google.maps.SymbolPath.CIRCLE,
+				        scale: 15,
+				        fillColor: "#2980b9",
+				        fillOpacity: 0.9,
+				        strokeWeight: 6,
+				        strokeOpacity:0.5,
+				        strokeColor: "#fff"
+				    },
+				    label: sensor_values[i].toString(),
+                    title: location.description // Set marker title (tooltip)
+                });
+
+                // Add click event listener to each marker to display description
+                addInfoWindow(marker, location.description);
+            }
+        }
+
+        // Function to add InfoWindow to marker
+        function addInfoWindow(marker, description) {
+            var infoWindow = new google.maps.InfoWindow({
+                content: description
+            });
+
+            marker.addListener('click', function() {
+                infoWindow.open(marker.getMap(), marker);
+            });
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Scraping Data</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-primary btn-sm" onclick="reload_datatable()"><i class="fa fa-sync"></i> Refresh table</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="run_scraping()">
+                    <i class="fa fa-running"></i> Run Scraping
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="ajax-table" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 10px;">No</th>
+                        <th>Station</th>
+                        <th>Lat, Lng</th>
+                        <th>Sensor</th>
+                        <th>Value</th>
+                        <th>Source</th>
+                        <th>Retreived At</th>
+                        <th>Date Data</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="select-date-range" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Select Range Date Time</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label">Start Date Time</label>
+                        <input type="text" class="form-control datetimepicker" id="date_start">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">End Date Time</label>
+                        <input type="text" class="form-control datetimepicker" id="date_end">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="doRun()">Run Scraping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loading-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="w-100 text-center font-weigh-bold" style="font-size: 22px; font-weight: bold;">
+                        <i class="fas fa-circle-notch fa-spin"></i> Getting Data, Please Wait.!
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block script %}
+
+<script>
+    $(document).ready(function() {
+        $('#ajax-table').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/scraping/get-data",
+                "type": "GET"
+            },
+            "columns": [
+                {"data": "no"},
+                {"data": "station_name"},
+                {"data": "lat"},
+                {"data": "sensor"},
+                {"data": "sensor_value"},
+                {"data": "source"},
+                {"data": "created_at"},
+                {"data": "date_data"},
+            ],
+            "columnDefs": [
+                { "orderable": false, "targets": 2 }
+            ]
+        });
+
+        $('.datetimepicker').daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            timePickerSeconds: true,
+            singleDatePicker: true,
+            locale: {
+              format: 'YYYY-MM-DD HH:mm:ss'
+            }
+        });
+    });
+
+    function reload_datatable(){
+        $('#ajax-table').DataTable().ajax.reload();
+    }
+
+    function showLoadingModal(is_show=1)
+    {
+        if (is_show == 1) {
+            $('#loading-modal').modal({backdrop: 'static', keyboard: false});
+        }else{
+            $('#loading-modal').modal('hide');
+        }
+        
+    }
+
+    function run_scraping(){
+        $("#select-date-range").modal('show')
+    }
+
+    function doRun()
+    {
+        var start_date = $("#date_start").val();
+        var end_date   = $("#date_end").val();
+        $("#select-date-range").modal('hide')
+        setTimeout(function() {
+            showLoadingModal()
+            $.ajax({
+                url: '/scraping/startV2',
+                type: 'GET',
+                data: {start_date:start_date, end_date:end_date},
+                dataType: 'HTML',
+            })
+            .done(function(e) {
+                console.log("success");
+                setTimeout(function() {
+                    showLoadingModal(0)
+                }, 500);
+            })
+            .fail(function() {
+                console.log("error");
+                setTimeout(function() {
+                    showLoadingModal(0)
+                }, 500);
+            })
+            .always(function() {
+                reload_datatable()
+                console.log("complete");
+            });
+        }, 500);
+    }
+</script>
+{% endblock %}

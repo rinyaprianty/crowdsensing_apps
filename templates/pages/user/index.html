@@ -1,0 +1,47 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+    <div class="card card-default">
+        <div class="card-header">
+            <h3 class="card-title">Admin User</h3>
+            <div class="card-tools">
+                <a type="button" class="btn btn-primary btn-sm" href="/users/create">
+                    <i class="fa fa-plus"></i> Add User
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 10px;">No</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in users %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ item['name'] }}</td>
+                            <td>{{ item['username'] }}</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" href="/users/{{ item['id'] }}/edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                {% if(item['id'] != 1) %}
+                                <a class="btn btn-sm btn-danger" href="/users/{{ item['id'] }}/delete" onclick="return confirm('Apakah anda yakin.?')">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock  %}
+
+{% block script %} {% endblock %}

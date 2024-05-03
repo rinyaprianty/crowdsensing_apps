@@ -1,0 +1,66 @@
+{% extends 'layouts/app2.html' %}
+
+{% block content %}
+<form method="POST" action="/station/store">
+	<div class="row">	
+		<div class="col-md-6">
+			<div class="card card-default">
+		        <div class="card-header">
+		            <h3 class="card-title">Add Station</h3>
+		            <div class="card-tools">
+		                
+		            </div>
+		        </div>
+		        
+		        <div class="card-body">
+		        	<div class="form-group row">
+		        		<label class="col-md-2 col-form-label">Station Name</label>
+		        		<div class="col-md-10">
+		        			<input type="text" class="form-control" placeholder="Station Name" name="station" required="">
+		        		</div>
+		        	</div>
+
+		        	<div class="form-group row">
+		        		<label class="col-md-2 col-form-label">Latituted</label>
+		        		<div class="col-md-10">
+		        			<input type="text" class="form-control" placeholder="Latituted" name="lat">
+		        		</div>
+		        	</div>
+
+		        	<div class="form-group row">
+		        		<label class="col-md-2 col-form-label">Longitude</label>
+		        		<div class="col-md-10">
+		        			<input type="text" class="form-control" placeholder="Longitude" name="long">
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="card-footer">
+		        	<button class="btn btn-primary">Save</button>
+		        </div>
+		    </div>
+		</div>
+		<div class="col-md-6">
+			<div class="card card-default">
+		        <div class="card-header">
+		            <h3 class="card-title">Sources</h3>
+		            <div class="card-tools">
+		                <a type="button" class="btn btn-info btn-sm" href="/station">
+		                    <i class="fa fa-arrow-left"></i> Back
+		                </a>
+		            </div>
+		        </div>
+		        <div class="card-body">
+		        	{% for s in source %}
+		        		<div class="form-group">
+		        			<label class="col-form-label">Url for {{ s['source'] }}</label>
+		        			<input type="hidden" name="source_id" value="{{ s['id'] }}">
+		        			<input type="text" class="form-control" name="source" placeholder="URL ({{ s['source'] }})">
+		        		</div>
+		        	{% endfor %}
+		        </div>
+		    </div>
+		</div>
+	</div>
+</form>
+    
+{% endblock  %}
